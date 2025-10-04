@@ -1,0 +1,162 @@
+topic,explanation,code,links
+software design principles,"In software programming, SOLID is a mnemonic acronym for five design principles intended to make object-oriented designs more understandable, flexible, and maintainable. Although the SOLID principles apply to any object-oriented design, they can also form a core philosophy for methodologies such as agile development or adaptive software development.
+Software engineer and instructor Robert C. Martin introduced the basic principles of SOLID design in his 2000 paper Design Principles and Design Patterns about software rot. The SOLID acronym was coined around 2004 by Michael Feathers.
+
+
+== Principles ==
+
+
+=== Single responsibility principle ===
+The single-responsibility principle (SRP) states that ""there should never be more than one reason for a class to change."" In other words, every class should have only one responsibility.","class Report:
+    def __init__(self, title, content):
+        self.title = title
+        self.content = content
+
+    def generate_report(self):
+        return f""Title: {self.title}
+Content: {self.content}""
+
+class ReportPrinter:
+    @staticmethod
+    def print_report(report):
+        print(report.generate_report())
+
+# Usage
+report = Report(""Monthly Sales"", ""Sales data for the month."")
+ReportPrinter.print_report(report)","[{""title"": ""No links found"", ""link"": """", ""snippet"": ""Try refining query.""}]"
+the fibbonacci sequence,"The Fibonacci sequence is a series of numbers where each number is the sum of the two preceding ones, starting from 0 and 1. The sequence begins as 0, 1, 1, 2, 3, 5, 8, 13, and so on. It is named after the Italian mathematician Leonardo of Pisa, known as Fibonacci, who introduced it to the Western world in his 1202 book ""Liber Abaci."" The Fibonacci sequence appears in various natural phenomena, such as the arrangement of leaves, the branching of trees, and the patterns of certain flowers. It also has applications in computer science, mathematics, and art.","def fibonacci(n):
+    fib_sequence = []
+    a, b = 0, 1
+    for _ in range(n):
+        fib_sequence.append(a)
+        a, b = b, a + b
+    return fib_sequence
+
+# Example usage:
+print(fibonacci(10))  # Output: [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]","[{""title"": ""A Python Guide to the Fibonacci Sequence"", ""link"": ""https://realpython.com/fibonacci-sequence-python/"", ""snippet"": ""In this step-by-step tutorial, you'll explore the Fibonacci sequence in Python, which serves as an invaluable springboard into the world of recursion, and learn how to optimize recursive \u2026""}, {""title"": ""Print the Fibonacci sequence - Python - GeeksforGeeks"", ""link"": ""https://www.geeksforgeeks.org/python/python-program-to-print-the-fibonacci-sequence/"", ""snippet"": ""Jul 23, 2025 \u00b7 The code uses an iterative approach to print the first 10 numbers of the Fibonacci sequence, starting from 0 and 1. It updates the values of a and b in each iteration and \u2026""}, {""title"": ""Python Program to Print the Fibonacci sequence"", ""link"": ""https://www.programiz.com/python-programming/examples/fibonacci-sequence"", ""snippet"": ""Source code to print Fibonacci sequence in Python programming with output and explanation...""}]"
+a python code,"Python is a high-level, general-purpose programming language. Its design philosophy emphasizes code readability with the use of significant indentation.
+Python is dynamically type-checked and garbage-collected. It supports multiple programming paradigms, including structured (particularly procedural), object-oriented and functional programming.
+Guido van Rossum began working on Python in the late 1980s as a successor to the ABC programming language.","# Function to add two integers
+def add_integers(a, b):
+    return a + b
+
+# Example usage
+result = add_integers(5, 3)
+print(result)  # Output: 8","[{""title"": ""Welcome to Python.org"", ""link"": ""https://www.python.org/"", ""snippet"": ""Experienced programmers in any other language can pick up Python very quickly, and beginners find the clean syntax and indentation structure easy to learn. Whet your appetite with our Python \u2026""}, {""title"": ""Online Python - IDE, Editor, Compiler, Interpreter"", ""link"": ""https://www.online-python.com/"", ""snippet"": ""Python, which was initially developed by Guido van Rossum and made available to the public in 1991, is currently one of the most widely used general-purpose programming languages.""}, {""title"": ""Python Tutorial - W3Schools"", ""link"": ""https://www.w3schools.com/python/"", ""snippet"": ""Learn Python Python is a popular programming language. Python can be used on a server to create web applications. Start learning Python now \u00bb""}]"
+a c++ code,"ATC code C Cardiovascular system is a section of the Anatomical Therapeutic Chemical Classification System, a system of alphanumeric codes developed by the World Health Organization (WHO) for the classification of drugs and other medical products.
+Codes for veterinary use (ATCvet codes) can be created by placing the letter Q in front of the human ATC code: for example, QC. National versions of the ATC classification may include additional codes not present in this list, which follows the WHO version.","#include <iostream>
+using namespace std;
+
+int main() {
+    int a, b, sum;
+    cout << ""Enter two integers: "";
+    cin >> a >> b;
+    sum = a + b;
+    cout << ""Sum: "" << sum << endl;
+    return 0;
+}","[{""title"": ""No links found"", ""link"": """", ""snippet"": ""Try refining query.""}]"
+how many seasons,"PCD is the debut studio album by American girl group the Pussycat Dolls, released on September 12, 2005, by A&M Records.   In 1995, the Pussycat Dolls were created as a burlesque troupe by choreographer Robin Antin. After attracting media attention, Antin struck a joint venture with Interscope Records to develop the Pussycat Dolls into a brand, with Jimmy Iovine assigning the project to Ron Fair. As one of the executive producers Fair produced the majority of the album and collaborated with producers like Kwamé, Polow da Don and Rich Harrison. The music style of PCD was described as pop/R&B and urban dance-pop.","seasons = [""Spring"", ""Summer"", ""Autumn"", ""Winter""]
+print(f""There are {len(seasons)} seasons in a year: {', '.join(seasons)}."")","[{""title"": ""google mail"", ""link"": ""https://mail.google.com/mail?hl=es"", ""snippet"": ""Aqu\u00ed nos gustar\u00eda mostrarte una descripci\u00f3n, pero el sitio web que est\u00e1s mirando no lo permite.""}, {""title"": ""Gmail: el correo electr\u00f3nico de Google"", ""link"": ""https://www.gmail.com/mail/help/intl/es/about.html?iframe"", ""snippet"": ""La sencillez y facilidad de Gmail en todo tipo de dispositivos. Organiza tu vida con la bandeja de entrada de Gmail, que clasifica tus mensajes \u2026""}, {""title"": ""Gmail: espacio de almacenamiento y correo gratuitos de Google"", ""link"": ""https://www.google.es/gmail/about/for-work/"", ""snippet"": ""Gmail funciona en todos los dispositivos Android, iOS y ordenadores. Ordena tus mensajes, colabora o llama a un amigo sin salir de tu \u2026""}]"
+gravity,"Gravity is a fundamental force of nature that attracts two bodies with mass toward each other. It is responsible for keeping planets in orbit around stars, moons around planets, and governs the motion of objects on Earth. Sir Isaac Newton formulated the law of universal gravitation, which quantifies this force, while Albert Einstein's theory of general relativity describes gravity as the curvature of spacetime caused by mass. Gravity affects everything from the falling of an apple to the Earth to the formation of galaxies in the universe.","def gravitational_force(m1, m2, r):
+    G = 6.674 * 10**-11  # gravitational constant
+    return G * (m1 * m2) / r**2
+
+# Example usage
+mass1 = 5.972 * 10**24  # mass of Earth in kg
+mass2 = 7.348 * 10**22  # mass of Moon in kg
+distance = 3.844 * 10**8  # distance from Earth to Moon in meters
+
+force = gravitational_force(mass1, mass2, distance)
+print(f""The gravitational force between Earth and Moon is {force:.2e} N"")","[{""title"": ""No links found"", ""link"": """", ""snippet"": ""Try refining query.""}]"
+the difference,"The term ""the difference"" generally refers to the distinction or variation between two or more items, concepts, or values. In mathematics, it specifically denotes the result of subtracting one number from another. In broader contexts, it can highlight contrasting characteristics, opinions, or outcomes. Understanding differences is crucial for analysis, decision-making, and problem-solving across various fields.","def classify_substance(pH):
+    if pH < 7:
+        return ""Acid""
+    elif pH > 7:
+        return ""Base""
+    else:
+        return ""Neutral""
+
+# Example usage:
+print(classify_substance(3))  # Output: Acid
+print(classify_substance(10)) # Output: Base
+print(classify_substance(7))  # Output: Neutral","[{""title"": ""\u4ec0\u4e48\u662f\u53cc\u91cd\u5dee\u5206\u6a21\u578b\uff08difference-in-differences model - \u77e5\u4e4e"", ""link"": ""https://www.zhihu.com/question/24322044"", ""snippet"": ""3.2 \u4e09\u91cd\u5dee\u5206\u6cd5\uff08Difference-in-differences-in-differences, DDD\uff09 \u5b9a\u4e49\uff1a\u518d\u505a\u4e00\u6b21\u53cc\u91cd\u5dee\u5206\u6d88\u9664\u5b9e\u9a8c\u4e0e\u5bf9\u7167\u7ec4\u5dee\u5f02\u5e26\u6765\u7684\u589e\u91cf\uff0c\u5269\u4e0b\u7684\u5373\u5e72\u9884\u5e26\u6765\u7684\u589e\u91cf\u3002 \u4e09\u91cd\u5dee\u5206\u7684\u6982\u5ff5\u6bd4\u8f83\u62bd\u8c61\uff0c\u8fd9\u91cc\u901a\u8fc7\u4e00\u4e2a\u4f8b \u2026""}, {""title"": ""difference\u548cdifferent\u7684\u533a\u522b - \u767e\u5ea6\u77e5\u9053"", ""link"": ""https://zhidao.baidu.com/question/1111483969839728539.html"", ""snippet"": ""\u533a\u522b\u4e00\uff1a\u610f\u601d\u4e0d\u540c difference\u91ca\u4e49\uff1a \u5dee\u5f02\uff1b\u4e0d\u540c\uff1b\u5dee\u989d\u7b49\u3002 different\u91ca\u4e49\u4e0d\u540c\u7684\uff1b\u5dee\u5f02\u7684\u7b49\u3002 \u533a\u522b\u4e8c\uff1a\u8bcd\u6027\u4e0d\u540c difference\u662f\u540d\u8bcd\u8bcd\u6027\u548c\u52a8\u8bcd\u8bcd\u6027\u3002 \u4f8b\u53e5\uff1aWe have a big difference\u3002\u610f\u601d\u662f\uff1a\u6211\u4eec\u6709 \u2026""}, {""title"": ""different,difference,differently\u7684\u533a\u522b\u548c\u7528\u6cd5\u662f\u4ec0\u4e48?_\u767e\u5ea6\u77e5\u9053"", ""link"": ""https://zhidao.baidu.com/question/580073177.html"", ""snippet"": ""different\u7528\u4f5c\u5f62\u5bb9\u8bcd\uff0cdifference\u7528\u4f5c\u540d\u8bcd\u3001\u52a8\u8bcd\uff0cdifferently\u7528\u4f5c\u526f\u8bcd\uff0c\u4e09\u8005\u4e4b\u95f4\u7684\u533a\u522b\u662f\uff1a\u610f\u601d\u4e0d\u540c\u3001\u7528\u6cd5\u4e0d\u540c \u4e00\u3001\u610f\u601d\u4e0d\u540c 1\u3001different\u7684\u610f\u601d\u662f\uff1a\u4e0d\u540c\u7684\uff1b\u5dee\u5f02\u7684\uff1b\u5206\u522b\u7684\uff1b\u5404\u4e0d\u76f8\u540c\u7684 2 \u2026""}]"
+a number,"A Number is a 2002 play by British playwright Caryl Churchill. The story, set in the near future, is structured around the conflict between a father (Salter) and his sons (Bernard 1, Bernard 2, and Michael Black) – two of whom are clones of the first one. The play addresses the subject of human cloning and identity, especially nature versus nurture. Many critics over the years have lauded A Number, arguing Churchill created a work of significant intellectual depth with effective economy of style.
+
+
+== Plot synopsis ==
+Scene 1: Bernard 2 (""B2"" in the script) has discovered that he is one of a number of clones.","def is_prime(n):
+    if n <= 1:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+# Example usage
+number = 29
+print(is_prime(number))  # Output: True","[{""title"": ""No links found"", ""link"": """", ""snippet"": ""Try refining query.""}]"
+two numbers,"In mathematics, the surreal number system is a totally ordered proper class containing not only the real numbers but also infinite and infinitesimal numbers, respectively larger or smaller in absolute value than any positive real number. Research on the Go endgame by John Horton Conway led to the original definition and construction of surreal numbers. Conway's construction was introduced in Donald Knuth's 1974 book Surreal Numbers: How Two Ex-Students Turned On to Pure Mathematics and Found Total Happiness. 
+The surreals share many properties with the reals, including the usual arithmetic operations (addition, subtraction, multiplication, and division); as such, they form an ordered field. If formulated in von Neumann–Bernays–Gödel set theory, the surreal numbers are a universal ordered field in the sense that all other ordered fields, such as the rationals, the reals, the rational functions, the Levi-Civita field, the superreal numbers (including the hyperreal numbers) can be realized as subfields of the surreals.","#include <iostream>
+using namespace std;
+
+int main() {
+    int num1, num2, sum;
+    cout << ""Enter two numbers: "";
+    cin >> num1 >> num2; // Input two numbers
+    sum = num1 + num2;   // Add the numbers
+    cout << ""Sum: "" << sum << endl; // Output the sum
+    return 0;
+}","[{""title"": ""No links found"", ""link"": """", ""snippet"": ""Try refining query.""}]"
+a list,"An A-list actor is a major movie star, or one of the most bankable actors in a film industry.
+The A-list is part of a larger guide called The Hot List, which ranks the bankability of 1,400 movie actors worldwide, and has become an industry-standard guide in Hollywood. American entertainment journalist James Ulmer, the guide's creator, has also developed a version including directors, the Hot List of Directors. The Ulmer scale categorizes the lists into A+, A, B+, B, C, and D listings. Similarly, in India, there is three-tier strategy, tier-1, tier-2 and tier-3, which are based on the saleability and box office collection capability of a star.","# Creating a list
+fruits = ['apple', 'banana', 'cherry']
+
+# Accessing elements
+print(fruits[0])  # Output: apple
+
+# Adding an element
+fruits.append('orange')
+
+# Removing an element
+fruits.remove('banana')
+
+# Iterating through the list
+for fruit in fruits:
+    print(fruit)","[{""title"": ""No links found"", ""link"": """", ""snippet"": ""Try refining query.""}]"
+recursion,"Recursion is a programming and mathematical concept where a function calls itself to solve a problem. It typically involves a base case, which stops the recursion, and a recursive case, which breaks the problem into smaller subproblems. This technique is often used for tasks like traversing data structures (e.g., trees), calculating factorials, or solving complex problems like the Fibonacci sequence. While powerful, recursion can lead to performance issues if not managed properly, such as excessive memory use or stack overflow errors.","def factorial(n):
+    if n == 0:  # Base case
+        return 1
+    else:  # Recursive case
+        return n * factorial(n - 1)
+
+# Example usage
+print(factorial(5))  # Output: 120","[{""title"": ""GeeksforGeeks - recursion"", ""link"": ""https://www.geeksforgeeks.org/?s=recursion"", ""snippet"": ""Tutorials and explanations""}, {""title"": ""StackOverflow - recursion"", ""link"": ""https://stackoverflow.com/search?q=recursion"", ""snippet"": ""Questions and answers""}]"
+the water cycle,"The water cycle (or hydrologic cycle or hydrological cycle) is a biogeochemical cycle that involves the continuous movement of water on, above and below the surface of the Earth across different reservoirs. The mass of water on Earth remains fairly constant over time. However, the partitioning of the water into the major reservoirs of ice, fresh water, salt water and atmospheric water is variable and depends on climatic variables. The water moves from one reservoir to another, such as from river to ocean, or from the ocean to the atmosphere due to a variety of physical and chemical processes. The processes that drive these movements, or fluxes, are evaporation, transpiration, condensation, precipitation, sublimation, infiltration, surface runoff, and subsurface flow.","class WaterCycle:
+    def __init__(self):
+        self.stage = ""Collection""
+
+    def evaporate(self):
+        self.stage = ""Evaporation""
+        print(""Water is evaporating."")
+
+    def condense(self):
+        self.stage = ""Condensation""
+        print(""Water vapor is condensing into clouds."")
+
+    def precipitate(self):
+        self.stage = ""Precipitation""
+        print(""Water is falling as rain."")
+
+    def cycle(self):
+        self.evaporate()
+        self.condense()
+        self.precipitate()
+        self.stage = ""Collection""
+        print(""Water is collected back into bodies of water."")
+
+# Example usage
+water_cycle = WaterCycle()
+water_cycle.cycle()","[{""title"": ""Rand Water"", ""link"": ""https://www.randwater.co.za/"", ""snippet"": ""Sep 10, 2025 \u00b7 Important Notice Please take note that any contract and or agreement not signed by the Chief Executive of Rand Water will not be deemed as an official Rand Water \u2026""}, {""title"": ""BULK POTABLE WATER TARIFF INCREASE EFFECTIVE \u2026"", ""link"": ""https://www.randwater.co.za/./media/forums/presentations/Rand+Water+Tariff+Consultation+for+the+Financial+Year+Beginning+1st+July+2025.pdf"", ""snippet"": ""Process of Consultation Rand Water must, for at least 40 (forty) days, request SALGA and National Treasury to provide comments on the proposed tariff increase. Thereafter the \u2026""}, {""title"": ""South African National Standard Drinking Water Quality ... - Rand \u2026"", ""link"": ""https://www.randwater.co.za/./media/forums/presentations/South+African+National+StandardDrinking+Water+Quality+SANS+241++2024).pdf"", ""snippet"": ""Minimum requirements for safe drinking water supply to consumers. Includes: \u2012 Water quality numerical limits (microbiological, chemical, radiological, operational & aesthetic parameters) \u2012 \u2026""}]"
+the derivative,"In mathematics, the derivative is a fundamental tool that quantifies the sensitivity to change of a function's output with respect to its input. The derivative of a function of a single variable at a chosen input value, when it exists, is the slope of the tangent line to the graph of the function at that point. The tangent line is the best linear approximation of the function near that input value. For this reason, the derivative is often described as the instantaneous rate of change, the ratio of the instantaneous change in the dependent variable to that of the independent variable. The process of finding a derivative is called differentiation.",# No code example generated.,"[{""title"": ""Khan Academy - the derivative"", ""link"": ""https://www.khanacademy.org/search?page_search_query=the+derivative"", ""snippet"": ""Interactive lessons""}, {""title"": ""Wolfram MathWorld - the derivative"", ""link"": ""https://mathworld.wolfram.com/search/?query=the+derivative"", ""snippet"": ""Detailed explanations""}]"
+cos,"Cost is the value of money that has been used up to produce something or deliver a service, and hence is not available for use anymore. In business, the cost may be one of acquisition, in which case the amount of money expended to acquire it is counted as cost. In this case, money is the input that is gone in order to acquire the thing. This acquisition cost may be the sum of the cost of production as incurred by the original producer, and further costs of transaction as incurred by the acquirer over and above the price paid to the producer. Usually, the price also includes a mark-up for profit over the cost of production.",# No code example generated.,"[{""title"": ""Khan Academy - cos"", ""link"": ""https://www.khanacademy.org/search?page_search_query=cos"", ""snippet"": ""Interactive lessons""}, {""title"": ""Wolfram MathWorld - cos"", ""link"": ""https://mathworld.wolfram.com/search/?query=cos"", ""snippet"": ""Detailed explanations""}]"
+cosx,"The function \( \cos(x) \) is one of the fundamental trigonometric functions, representing the cosine of an angle \( x \) measured in radians. It describes the ratio of the adjacent side to the hypotenuse in a right triangle. The cosine function is periodic, with a period of \( 2\pi \), and its values range from -1 to 1. The graph of \( \cos(x) \) is a wave-like curve that oscillates between these values, starting at 1 when \( x = 0 \). Cosine is widely used in various fields, including physics, engineering, and computer science, particularly in modeling oscillatory phenomena.",# No code example generated.,"[{""title"": ""Khan Academy - cosx"", ""link"": ""https://www.khanacademy.org/search?page_search_query=cosx"", ""snippet"": ""Interactive lessons""}, {""title"": ""Wolfram MathWorld - cosx"", ""link"": ""https://mathworld.wolfram.com/search/?query=cosx"", ""snippet"": ""Detailed explanations""}]"

@@ -1,0 +1,22 @@
+{
+  "topic": "how many seasons",
+  "explanation": "PCD is the debut studio album by American girl group the Pussycat Dolls, released on September 12, 2005, by A&M Records.   In 1995, the Pussycat Dolls were created as a burlesque troupe by choreographer Robin Antin. After attracting media attention, Antin struck a joint venture with Interscope Records to develop the Pussycat Dolls into a brand, with Jimmy Iovine assigning the project to Ron Fair. As one of the executive producers Fair produced the majority of the album and collaborated with producers like Kwamé, Polow da Don and Rich Harrison. The music style of PCD was described as pop/R&B and urban dance-pop.",
+  "code": "seasons = [\"Spring\", \"Summer\", \"Autumn\", \"Winter\"]\nprint(f\"There are {len(seasons)} seasons in a year: {', '.join(seasons)}.\")",
+  "links": [
+    {
+      "title": "google mail",
+      "link": "https://mail.google.com/mail?hl=es",
+      "snippet": "Aquí nos gustaría mostrarte una descripción, pero el sitio web que estás mirando no lo permite."
+    },
+    {
+      "title": "Gmail: el correo electrónico de Google",
+      "link": "https://www.gmail.com/mail/help/intl/es/about.html?iframe",
+      "snippet": "La sencillez y facilidad de Gmail en todo tipo de dispositivos. Organiza tu vida con la bandeja de entrada de Gmail, que clasifica tus mensajes …"
+    },
+    {
+      "title": "Gmail: espacio de almacenamiento y correo gratuitos de Google",
+      "link": "https://www.google.es/gmail/about/for-work/",
+      "snippet": "Gmail funciona en todos los dispositivos Android, iOS y ordenadores. Ordena tus mensajes, colabora o llama a un amigo sin salir de tu …"
+    }
+  ]
+}

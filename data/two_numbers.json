@@ -1,0 +1,12 @@
+{
+  "topic": "two numbers",
+  "explanation": "In mathematics, the surreal number system is a totally ordered proper class containing not only the real numbers but also infinite and infinitesimal numbers, respectively larger or smaller in absolute value than any positive real number. Research on the Go endgame by John Horton Conway led to the original definition and construction of surreal numbers. Conway's construction was introduced in Donald Knuth's 1974 book Surreal Numbers: How Two Ex-Students Turned On to Pure Mathematics and Found Total Happiness. \nThe surreals share many properties with the reals, including the usual arithmetic operations (addition, subtraction, multiplication, and division); as such, they form an ordered field. If formulated in von Neumann–Bernays–Gödel set theory, the surreal numbers are a universal ordered field in the sense that all other ordered fields, such as the rationals, the reals, the rational functions, the Levi-Civita field, the superreal numbers (including the hyperreal numbers) can be realized as subfields of the surreals.",
+  "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int num1, num2, sum;\n    cout << \"Enter two numbers: \";\n    cin >> num1 >> num2; // Input two numbers\n    sum = num1 + num2;   // Add the numbers\n    cout << \"Sum: \" << sum << endl; // Output the sum\n    return 0;\n}",
+  "links": [
+    {
+      "title": "No links found",
+      "link": "",
+      "snippet": "Try refining query."
+    }
+  ]
+}

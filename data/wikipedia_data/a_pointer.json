@@ -1,0 +1,22 @@
+{
+  "topic": "a pointer",
+  "explanation": "A pointer is a variable in programming that stores the memory address of another variable. It allows for direct access and manipulation of memory, enabling efficient data handling and dynamic memory allocation. Pointers are commonly used in languages like C and C++ to create complex data structures, such as linked lists and trees. They can also facilitate the passing of large data structures to functions without copying the entire structure, improving performance. However, improper use of pointers can lead to issues like memory leaks and segmentation faults.",
+  "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int var = 42;          // An integer variable\n    int* ptr = &var;      // Pointer to the variable's address\n\n    cout << \"Value of var: \" << var << endl;         // Outputs 42\n    cout << \"Address of var: \" << &var << endl;      // Outputs the address of var\n    cout << \"Value via pointer: \" << *ptr << endl;   // Outputs 42 (dereferencing the pointer)\n\n    return 0;\n}",
+  "links": [
+    {
+      "title": "Download the YouTube mobile app - Android - YouTube Help",
+      "link": "https://support.google.com/youtube/answer/3227660?hl=en&co=GENIE.Platform=Android",
+      "snippet": "Download the YouTube app for a richer viewing experience on your smartphone."
+    },
+    {
+      "title": "Navega por YouTube Studio - Computadora - Ayuda de YouTube",
+      "link": "https://support.google.com/youtube/answer/7548152?hl=es-419&co=GENIE.Platform=Desktop",
+      "snippet": "Cómo administrar tu canal Accede a YouTube Studio. Usa el menú de la izquierda para administrar tus videos y tu canal. Panel : Obtén un resumen con los datos más relevantes de la actividad …"
+    },
+    {
+      "title": "Comece a fazer transmissões ao vivo - Computador - Ajuda do …",
+      "link": "https://support.google.com/youtube/answer/2474026?hl=pt-BR&co=GENIE.Platform=Desktop",
+      "snippet": "A partir de 22 de julho, a idade mínima para fazer transmissões ao vivo vai ser de 16 anos. Isso significa que os criadores de conteúdo vão precisar ter 16 anos ou mais para fazer transmissões …"
+    }
+  ]
+}

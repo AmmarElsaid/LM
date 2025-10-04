@@ -1,0 +1,22 @@
+{
+  "topic": "acids",
+  "explanation": "An acid is a molecule or ion capable of either donating a proton (i.e. hydrogen cation, H+), known as a Brønsted–Lowry acid, or forming a covalent bond with an electron pair, known as a Lewis acid.\nThe first category of acids are the proton donors, or Brønsted–Lowry acids. In the special case of aqueous solutions, proton donors form the hydronium ion H3O+ and are known as Arrhenius acids. Brønsted and Lowry generalized the Arrhenius theory to include non-aqueous solvents.",
+  "code": "class Acid:\n    def __init__(self, name, strength):\n        self.name = name\n        self.strength = strength  # 'strong' or 'weak'\n\n    def dissociate(self):\n        if self.strength == 'strong':\n            return f\"{self.name} fully dissociates into H⁺ and anions.\"\n        else:\n            return f\"{self.name} partially dissociates into H⁺ and anions.\"\n\n# Example usage\nhcl = Acid(\"Hydrochloric Acid\", \"strong\")\nacetic_acid = Acid(\"Acetic Acid\", \"weak\")\n\nprint(hcl.dissociate())\nprint(acetic_acid.dissociate())",
+  "links": [
+    {
+      "title": "Cadastro Positivo Grátis - BoaVista - Boa Vista Servicos",
+      "link": "https://consumidor.boavistaservicos.com.br/cadastro-positivo/",
+      "snippet": "Faça seu cadastro positivo gratuitamente junto a Boa Vista SCPC. Seja reconhecido como um bom pagador e aumente suas chances de obter …"
+    },
+    {
+      "title": "Consumidor Positivo",
+      "link": "https://www.consumidorpositivo.com.br/",
+      "snippet": "Estava com o nome negativado depois de emprestar meu cartão para familiares fazerem compras, mas hoje felizmente já consegui me …"
+    },
+    {
+      "title": "Equifax | BoaVista",
+      "link": "https://consumidor.boavistaservicos.com.br/",
+      "snippet": "Consulte seu CPF e resolva pendências Entenda se você possui débitos e negocie com segurança. Entenda seu Score Saiba como …"
+    }
+  ]
+}

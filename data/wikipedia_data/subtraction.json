@@ -1,0 +1,22 @@
+{
+  "topic": "subtraction",
+  "explanation": "Subtraction is a fundamental arithmetic operation that represents the process of taking one quantity away from another. It is often denoted by the minus sign (−) and can be thought of as finding the difference between two numbers. For example, in the equation 7 - 3 = 4, the number 3 is subtracted from 7, resulting in 4. Subtraction is essential in various mathematical concepts and real-life applications, such as budgeting, measuring, and problem-solving. It also has properties, such as the fact that subtracting a number from itself results in zero.",
+  "code": "# Subtracting two numbers\na = 10\nb = 4\nresult = a - b\nprint(result)  # Output: 6",
+  "links": [
+    {
+      "title": "Milano, l'impianto non regge: la sconfitta storica dei pm. Ma i ...",
+      "link": "https://www.ilgiornale.it/news/politica/milano-limpianto-non-regge-sconfitta-storica-dei-pm-i-2538242.html",
+      "snippet": "7 hours ago · \"Non è una sconfitta, noi andiamo avanti\". È questo il messaggio che arriva dai corridoi della Procura della Repubblica di Milano, all'indomani della batosta subita sul fronte delle …"
+    },
+    {
+      "title": "La guerra dei pm all'urbanistica e una sentenza che sarà decisiva",
+      "link": "https://www.ilfoglio.it/gran-milano/2024/05/23/news/la-guerra-dei-pm-all-urbanistica-e-una-sentenza-che-sara-decisiva-6570558/",
+      "snippet": "May 23, 2024 · Mentre il decreto \"Salva Milano\" è ancora in discussione, la città cerca di risolvere il problema degli abusi edilizi partendo dal cantiere di via Lepontina: il progetto \"Il giardino …"
+    },
+    {
+      "title": "Inchiesta Milano: \"San Siro, c'è un patto corruttivo\" secondo i pm ...",
+      "link": "https://www.gazzetta.it/Calcio/Serie-A/Milan/20-07-2025/inchiesta-milano-san-siro-c-e-un-patto-corruttivo-secondo-i-pm.shtml",
+      "snippet": "Jul 20, 2025 · La chance gli si porge quando l'immobiliarista Massimo Caputi, estraneo alle indagini, affida alla J+S la trasformazione delle scuderie De Montel a San Siro in terme."
+    }
+  ]
+}

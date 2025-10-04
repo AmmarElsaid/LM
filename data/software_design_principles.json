@@ -1,0 +1,12 @@
+{
+  "topic": "software design principles",
+  "explanation": "In software programming, SOLID is a mnemonic acronym for five design principles intended to make object-oriented designs more understandable, flexible, and maintainable. Although the SOLID principles apply to any object-oriented design, they can also form a core philosophy for methodologies such as agile development or adaptive software development.\nSoftware engineer and instructor Robert C. Martin introduced the basic principles of SOLID design in his 2000 paper Design Principles and Design Patterns about software rot. The SOLID acronym was coined around 2004 by Michael Feathers.\n\n\n== Principles ==\n\n\n=== Single responsibility principle ===\nThe single-responsibility principle (SRP) states that \"there should never be more than one reason for a class to change.\" In other words, every class should have only one responsibility.",
+  "code": "class Report:\n    def __init__(self, title, content):\n        self.title = title\n        self.content = content\n\n    def generate_report(self):\n        return f\"Title: {self.title}\nContent: {self.content}\"\n\nclass ReportPrinter:\n    @staticmethod\n    def print_report(report):\n        print(report.generate_report())\n\n# Usage\nreport = Report(\"Monthly Sales\", \"Sales data for the month.\")\nReportPrinter.print_report(report)",
+  "links": [
+    {
+      "title": "No links found",
+      "link": "",
+      "snippet": "Try refining query."
+    }
+  ]
+}

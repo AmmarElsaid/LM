@@ -1,0 +1,17 @@
+{
+  "topic": "the derivative",
+  "explanation": "In mathematics, the derivative is a fundamental tool that quantifies the sensitivity to change of a function's output with respect to its input. The derivative of a function of a single variable at a chosen input value, when it exists, is the slope of the tangent line to the graph of the function at that point. The tangent line is the best linear approximation of the function near that input value. For this reason, the derivative is often described as the instantaneous rate of change, the ratio of the instantaneous change in the dependent variable to that of the independent variable. The process of finding a derivative is called differentiation.",
+  "code": "# No code example generated.",
+  "links": [
+    {
+      "title": "Khan Academy - the derivative",
+      "link": "https://www.khanacademy.org/search?page_search_query=the+derivative",
+      "snippet": "Interactive lessons"
+    },
+    {
+      "title": "Wolfram MathWorld - the derivative",
+      "link": "https://mathworld.wolfram.com/search/?query=the+derivative",
+      "snippet": "Detailed explanations"
+    }
+  ]
+}

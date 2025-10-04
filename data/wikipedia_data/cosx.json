@@ -1,0 +1,17 @@
+{
+  "topic": "cosx",
+  "explanation": "The function \\( \\cos(x) \\) is one of the fundamental trigonometric functions, representing the cosine of an angle \\( x \\) measured in radians. It describes the ratio of the adjacent side to the hypotenuse in a right triangle. The cosine function is periodic, with a period of \\( 2\\pi \\), and its values range from -1 to 1. The graph of \\( \\cos(x) \\) is a wave-like curve that oscillates between these values, starting at 1 when \\( x = 0 \\). Cosine is widely used in various fields, including physics, engineering, and computer science, particularly in modeling oscillatory phenomena.",
+  "code": "# No code example generated.",
+  "links": [
+    {
+      "title": "Khan Academy - cosx",
+      "link": "https://www.khanacademy.org/search?page_search_query=cosx",
+      "snippet": "Interactive lessons"
+    },
+    {
+      "title": "Wolfram MathWorld - cosx",
+      "link": "https://mathworld.wolfram.com/search/?query=cosx",
+      "snippet": "Detailed explanations"
+    }
+  ]
+}

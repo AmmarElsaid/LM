@@ -1,0 +1,22 @@
+{
+  "topic": "java subtraction",
+  "explanation": "In Java, subtraction is performed using the minus operator (`-`). It can be applied to various numeric data types, including integers (`int`), floating-point numbers (`float` and `double`), and others. For example, to subtract two integers, you can write `int result = a - b;`, where `a` and `b` are the integers. The result will be the difference between the two values. Additionally, Java handles type conversion automatically when performing subtraction between different numeric types, promoting smaller types to larger types as needed.",
+  "code": "public class SubtractionExample {\n    public static void main(String[] args) {\n        int a = 10;\n        int b = 5;\n        int result = a - b;\n        System.out.println(\"Subtraction Result: \" + result);\n    }\n}\n#include <iostream>\nusing namespace std;\n\nint main() {\n    int a = 10;\n    int b = 5;\n    int result = a - b;\n    cout << \"Subtraction Result: \" << result << endl;\n    return 0;\n}",
+  "links": [
+    {
+      "title": "Recuperar contraseña de Facebook: con y sin correo o número - CCM",
+      "link": "https://es.ccm.net/aplicaciones-e-internet/redes-sociales-y-mensajeria/915-que-hacer-si-olvidaste-tu-contrasena-de-facebook/",
+      "snippet": "Jul 19, 2023 · ¿Has olvidado tu contraseña de Facebook y no puedes entrar? En este artículo te explicamos cómo recuperar tu cuenta si olvidaste tu contraseña, incluso sin usar tu correo o tu …"
+    },
+    {
+      "title": "Cómo 'hackear' una cuenta de Facebook: sin teléfono, correo - CCM",
+      "link": "https://es.ccm.net/aplicaciones-e-internet/redes-sociales-y-mensajeria/2172-como-hackear-una-cuenta-de-facebook/",
+      "snippet": "Oct 25, 2023 · En Internet puedes encontrar sitios que ofrecen tutoriales de cómo hackear una cuenta de Facebook, ya sea mediante un keylogger o ingeniería social. También, puedes …"
+    },
+    {
+      "title": "Descargar Facebook gratis para PC, iOS, Android APK - CCM",
+      "link": "https://es.ccm.net/descargas/comunicacion/5426-facebook/",
+      "snippet": "Jan 23, 2024 · Para recuperar una cuenta de Facebook, dirígete a la página de inicio de Facebook y haz clic en \"¿Olvidaste tu cuenta?\" justo debajo del botón \"Iniciar sesión\"."
+    }
+  ]
+}

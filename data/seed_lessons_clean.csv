@@ -1,0 +1,156 @@
+topic,explanation,code,links
+software design principles,"In software programming, SOLID is a mnemonic acronym for five design principles intended to make object-oriented designs more understandable, flexible, and maintainable. Although the SOLID principles apply to any object-oriented design, they can also form a core philosophy for methodologies such as agile development or adaptive software development.
+Software engineer and instructor Robert C. Martin introduced the basic principles of SOLID design in his 2000 paper Design Principles and Design Patterns about software rot. The SOLID acronym was coined around 2004 by Michael Feathers.
+
+
+== Principles ==
+
+
+=== Single responsibility principle ===
+The single-responsibility principle (SRP) states that ""there should never be more than one reason for a class to change."" In other words, every class should have only one responsibility.","class Report:
+    def __init__(self, title, content):
+        self.title = title
+        self.content = content
+
+    def generate_report(self):
+        return f""Title: {self.title}
+Content: {self.content}""
+
+class ReportPrinter:
+    @staticmethod
+    def print_report(report):
+        print(report.generate_report())
+
+# Usage
+report = Report(""Monthly Sales"", ""Sales data for the month."")
+ReportPrinter.print_report(report)","[{""title"": ""No links found"", ""link"": """", ""snippet"": ""Try refining query.""}]"
+the fibbonacci sequence,"The Fibonacci sequence is a series of numbers where each number is the sum of the two preceding ones, starting from 0 and 1. The sequence begins as 0, 1, 1, 2, 3, 5, 8, 13, and so on. It is named after the Italian mathematician Leonardo of Pisa, known as Fibonacci, who introduced it to the Western world in his 1202 book ""Liber Abaci."" The Fibonacci sequence appears in various natural phenomena, such as the arrangement of leaves, the branching of trees, and the patterns of certain flowers. It also has applications in computer science, mathematics, and art.","def fibonacci(n):
+    fib_sequence = []
+    a, b = 0, 1
+    for _ in range(n):
+        fib_sequence.append(a)
+        a, b = b, a + b
+    return fib_sequence
+
+# Example usage:
+print(fibonacci(10))  # Output: [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]","[{""title"": ""A Python Guide to the Fibonacci Sequence"", ""link"": ""https://realpython.com/fibonacci-sequence-python/"", ""snippet"": ""In this step-by-step tutorial, you'll explore the Fibonacci sequence in Python, which serves as an invaluable springboard into the world of recursion, and learn how to optimize recursive \u2026""}, {""title"": ""Print the Fibonacci sequence - Python - GeeksforGeeks"", ""link"": ""https://www.geeksforgeeks.org/python/python-program-to-print-the-fibonacci-sequence/"", ""snippet"": ""Jul 23, 2025 \u00b7 The code uses an iterative approach to print the first 10 numbers of the Fibonacci sequence, starting from 0 and 1. It updates the values of a and b in each iteration and \u2026""}, {""title"": ""Python Program to Print the Fibonacci sequence"", ""link"": ""https://www.programiz.com/python-programming/examples/fibonacci-sequence"", ""snippet"": ""Source code to print Fibonacci sequence in Python programming with output and explanation...""}]"
+a python code,"Python is a high-level, general-purpose programming language. Its design philosophy emphasizes code readability with the use of significant indentation.
+Python is dynamically type-checked and garbage-collected. It supports multiple programming paradigms, including structured (particularly procedural), object-oriented and functional programming.
+Guido van Rossum began working on Python in the late 1980s as a successor to the ABC programming language.","# Function to add two integers
+def add_integers(a, b):
+    return a + b
+
+# Example usage
+result = add_integers(5, 3)
+print(result)  # Output: 8","[{""title"": ""Welcome to Python.org"", ""link"": ""https://www.python.org/"", ""snippet"": ""Experienced programmers in any other language can pick up Python very quickly, and beginners find the clean syntax and indentation structure easy to learn. Whet your appetite with our Python \u2026""}, {""title"": ""Online Python - IDE, Editor, Compiler, Interpreter"", ""link"": ""https://www.online-python.com/"", ""snippet"": ""Python, which was initially developed by Guido van Rossum and made available to the public in 1991, is currently one of the most widely used general-purpose programming languages.""}, {""title"": ""Python Tutorial - W3Schools"", ""link"": ""https://www.w3schools.com/python/"", ""snippet"": ""Learn Python Python is a popular programming language. Python can be used on a server to create web applications. Start learning Python now \u00bb""}]"
+a java code,"Java is a high-level, general-purpose, memory-safe, object-oriented programming language. It is intended to let programmers write once, run anywhere (WORA), meaning that compiled Java code can run on all platforms that support Java without the need to recompile. Java applications are typically compiled to bytecode that can run on any Java virtual machine (JVM) regardless of the underlying computer architecture. The syntax of Java is similar to C and C++, but has fewer low-level facilities than either of them. The Java runtime provides dynamic capabilities (such as reflection and runtime code modification) that are typically not available in traditional compiled languages.","import java.util.Scanner;
+
+public class AddTwoNumbers {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print(""Enter first number: "");
+        int num1 = scanner.nextInt();
+        
+        System.out.print(""Enter second number: "");
+        int num2 = scanner.nextInt();
+        
+        int sum = num1 + num2;
+        
+        System.out.println(""The sum is: "" + sum);
+        
+        scanner.close();
+    }
+}","[{""title"": ""Java LTS\u7248\u672c\u6709\u54ea\u4e9b\uff1f - \u77e5\u4e4e"", ""link"": ""https://www.zhihu.com/question/9727591209"", ""snippet"": ""Java LTS\u7248\u672c (\u957f\u671f\u652f\u6301\u7248\u672c)\u5bf9\u4e8e\u4f01\u4e1a\u548c\u5f00\u53d1\u8005\u6765\u8bf4\u81f3\u5173\u91cd\u8981\uff0c\u80fd\u63d0\u4f9b\u7a33\u5b9a\u7684\u5f00\u53d1\u548c\u751f\u4ea7\u73af\u5883\uff0c\u5e76\u5728\u8f83\u957f\u65f6\u95f4\u5185\u83b7\u5f97\u5b98\u65b9\u652f\u6301\uff0c\u5305\u62ec\u5b89\u5168\u66f4\u65b0\u3001Bug\u4fee\u590d\u548c\u6027\u80fd\u63d0\u5347\uff0c\u76ee\u524d\u4e3b\u8981\u7684Java LTS\u7248\u672c \u2026""}, {""title"": ""\u4e3a\u4ec0\u4e48java\u603b\u662f\u5b89\u88c5\u4e0d\u4e0a\u5462\uff1f\u6c42\u5927\u795e\u5e2e\u89e3\uff0c\u8c22\u8c22\uff01? - \u77e5\u4e4e"", ""link"": ""https://www.zhihu.com/question/488640134"", ""snippet"": ""Sep 24, 2021 \u00b7 \u4e0b\u8f7dtar.gz\u6587\u4ef6\u89e3\u538b\u5373\u53ef\u3002 JDK\uff08Java Development Kit\uff09 \u662f\u6574\u4e2a Java \u7684\u6838\u5fc3\uff0c\u5305\u62ec\u4e86Java\u8fd0\u884c\u73af\u5883\u3001Java\u5de5\u5177\u548cJava\u57fa\u7840\u7c7b\u5e93\uff0c\u662f Java \u8bed\u8a00\u7684\u8f6f\u4ef6\u5f00\u53d1\u5de5\u5177\u5305\uff0c\u4e3b\u8981\u7528\u4e8e\u79fb \u2026""}, {""title"": ""\u54ea\u4f4d\u5927\u4f6c\u80fd\u603b\u7ed3\u4e00\u4e0bc\u8bed\u8a00\u4e0eJava\u8bed\u8a00\u7684\u5171\u540c\u70b9\u4e0e\u4e0d\u540c\u70b9\u5417\uff1f - \u77e5\u4e4e"", ""link"": ""https://www.zhihu.com/question/465488085"", ""snippet"": ""Java\u7684\u5b66\u4e60\u96be\u5ea6 \u9762\u5411\u5bf9\u8c61\u7f16\u7a0b\u7684\u4e00\u4e2a\u5b9e\u8d28\u6027\u7684\u8981\u7d20\u662f\u62bd\u8c61\uff0c\u800cJava\u8bed\u8a00\u5c5e\u4e8e\u5178\u578b\u7684\u9762\u5411\u5bf9\u8c61\u8bed\u8a00\uff0c\u5177\u6709\u8f83\u9ad8\u7684\u62bd\u8c61\u7a0b\u5ea6\u3002 \u5bf9\u4e8e\u521d\u5b66\u8005\u6765\u8bf4\uff0c\u5b66\u4e60Java\u8fd8\u662f\u5177\u6709\u4e00\u5b9a\u96be\u5ea6\u7684\uff0c\u80fd\u4e0d\u80fd\u5b66\u597dJava \u2026""}]"
+a pointer,"A pointer is a variable in programming that stores the memory address of another variable. It allows for direct access and manipulation of memory, enabling efficient data handling and dynamic memory allocation. Pointers are commonly used in languages like C and C++ to create complex data structures, such as linked lists and trees. They can also facilitate the passing of large data structures to functions without copying the entire structure, improving performance. However, improper use of pointers can lead to issues like memory leaks and segmentation faults.","#include <iostream>
+using namespace std;
+
+int main() {
+    int var = 42;          // An integer variable
+    int* ptr = &var;      // Pointer to the variable's address
+
+    cout << ""Value of var: "" << var << endl;         // Outputs 42
+    cout << ""Address of var: "" << &var << endl;      // Outputs the address of var
+    cout << ""Value via pointer: "" << *ptr << endl;   // Outputs 42 (dereferencing the pointer)
+
+    return 0;
+}","[{""title"": ""Download the YouTube mobile app - Android - YouTube Help"", ""link"": ""https://support.google.com/youtube/answer/3227660?hl=en&co=GENIE.Platform=Android"", ""snippet"": ""Download the YouTube app for a richer viewing experience on your smartphone.""}, {""title"": ""Navega por YouTube Studio - Computadora - Ayuda de YouTube"", ""link"": ""https://support.google.com/youtube/answer/7548152?hl=es-419&co=GENIE.Platform=Desktop"", ""snippet"": ""C\u00f3mo administrar tu canal Accede a YouTube Studio. Usa el men\u00fa de la izquierda para administrar tus videos y tu canal. Panel : Obt\u00e9n un resumen con los datos m\u00e1s relevantes de la actividad \u2026""}, {""title"": ""Comece a fazer transmiss\u00f5es ao vivo - Computador - Ajuda do \u2026"", ""link"": ""https://support.google.com/youtube/answer/2474026?hl=pt-BR&co=GENIE.Platform=Desktop"", ""snippet"": ""A partir de 22 de julho, a idade m\u00ednima para fazer transmiss\u00f5es ao vivo vai ser de 16 anos. Isso significa que os criadores de conte\u00fado v\u00e3o precisar ter 16 anos ou mais para fazer transmiss\u00f5es \u2026""}]"
+binary search algorithm,"In computer science, binary search, also known as half-interval search, logarithmic search, or binary chop, is a search algorithm that finds the position of a target value within a sorted array. Binary search compares the target value to the middle element of the array. If they are not equal, the half in which the target cannot lie is eliminated and the search continues on the remaining half, again taking the middle element to compare to the target value, and repeating this until the target value is found. If the search ends with the remaining half being empty, the target is not in the array.
+Binary search runs in logarithmic time in the worst case, making 
+  
+    
+      
+        O
+        (
+        log
+        ⁡
+        n
+        )
+      
+    
+    {\displaystyle O(\log n)}
+  
+ comparisons, where 
+  
+    
+      
+        n
+      
+    
+    {\displaystyle n}
+  
+ is the number of elements in the array.","def binary_search(arr, target):
+    left, right = 0, len(arr) - 1
+    
+    while left <= right:
+        mid = left + (right - left) // 2  # Avoids overflow
+        
+        if arr[mid] == target:
+            return mid  # Target found
+        elif arr[mid] < target:
+            left = mid + 1  # Search right half
+        else:
+            right = mid - 1  # Search left half
+            
+    return -1  # Target not found
+
+# Example usage
+sorted_array = [1, 3, 5, 7, 9]
+target_value = 5
+result = binary_search(sorted_array, target_value)
+print(result)  # Output: 2 (index of target_value)","[{""title"": ""\u95ee\u9898\uff1aOpenJDK Platform Binary\u5982\u4f55\u6b63\u786e\u7ed3\u675f\u4efb\u52a1\uff1f - CSDN\u95ee\u7b54"", ""link"": ""https://ask.csdn.net/questions/8475239"", ""snippet"": ""Jun 28, 2025 \u00b7 CSDN\u95ee\u7b54\u4e3a\u60a8\u627e\u5230\u95ee\u9898\uff1aOpenJDK Platform Binary\u5982\u4f55\u6b63\u786e\u7ed3\u675f\u4efb\u52a1\uff1f\u76f8\u5173\u95ee\u9898\u7b54\u6848\uff0c\u5982\u679c\u60f3\u4e86\u89e3\u66f4\u591a\u5173\u4e8e\u95ee\u9898\uff1aOpenJDK Platform Binary\u5982\u4f55\u6b63\u786e\u7ed3\u675f\u4efb\u52a1\uff1f \u9752\u5c11\u5e74\u7f16\u7a0b \u6280\u672f\u95ee\u9898 \u2026""}, {""title"": ""\u5173\u4e8elsdyna\u91cd\u542f\u52a8\u6587\u4ef6d3dump\u8f93\u51fa\u7684\u8bbe\u7f6e_\u5927\u6570\u636e-CSDN\u95ee\u7b54"", ""link"": ""https://ask.csdn.net/questions/7997649"", ""snippet"": ""Sep 10, 2023 \u00b7 \u8bf7\u67e5\u9605LS-DYNA\u7684\u6587\u6863\u4ee5\u4e86\u89e3\u66f4\u591a\u5173\u4e8e *database_binary_d3dump \u5361\u7247\u53c2\u6570\u7684\u4fe1\u606f\uff0c\u5e76\u6839\u636e\u60a8\u7684\u5177\u4f53\u60c5\u51b5\u8fdb\u884c\u8c03\u6574\u3002 \u8be5\u56de\u7b54\u5f15\u7528NewBing\uff0c\u4ec5\u4e3a\u60a8\u63d0\u4f9b\u53c2\u8003\uff0c\u4e0d\u4fdd\u8bc1\u5b8c\u5168\u6b63\u786e \u6839\u636e\u6211 \u2026""}, {""title"": ""C\u8bed\u8a00\u4e2d\u4e3a\u4f55\u4f1a\u51fa\u73b0\u201cerror: invalid operands to binary - (have 'int' \u2026"", ""link"": ""https://ask.csdn.net/questions/8253840"", ""snippet"": ""Apr 27, 2025 \u00b7 \u5728C\u8bed\u8a00\u4e2d\uff0c\u51fa\u73b0\u201cerror: invalid operands to binary - (have 'int' and 'int *')\u201d\u9519\u8bef\u7684\u539f\u56e0\u662f\u5c1d\u8bd5\u5bf9\u4e00\u4e2a\u6574\u6570\u7c7b\u578b\uff08int\uff09\u548c\u4e00\u4e2a\u6307\u9488\u7c7b\u578b\uff08int *\uff09\u4f7f\u7528\u51cf\u6cd5\u8fd0\u7b97\u7b26\u3002\u8fd9\u79cd\u64cd\u4f5c\u4e0d\u7b26\u5408C\u8bed\u8a00\u7684\u8bed \u2026""}]"
+loop,"A loop in programming is a control structure that allows for the repeated execution of a block of code as long as a specified condition is met. There are several types of loops, including ""for"" loops, which iterate a set number of times, and ""while"" loops, which continue until a condition becomes false. Loops are essential for tasks that require repetitive actions, such as processing items in a list or performing calculations multiple times. Properly managing loops is crucial to avoid infinite loops, which can cause programs to hang or crash.","# Using a for loop to print each item in a list
+fruits = ['apple', 'banana', 'cherry']
+for fruit in fruits:
+    print(fruit)
+apple
+banana
+cherry","[{""title"": ""No links found"", ""link"": """", ""snippet"": ""Try refining query.""}]"
+functions,"In mathematics, a function is a relation that assigns each input exactly one output. It is often expressed as \( f(x) \), where \( f \) is the function name and \( x \) is the input variable. Functions can be represented in various forms, including equations, graphs, and tables. They are fundamental in various fields, as they describe how one quantity depends on another. Functions can be classified into different types, such as linear, quadratic, and exponential, based on their characteristics.","def greet(name):
+    return f""Hello, {name}!""
+
+# Calling the function
+print(greet(""Alice""))  # Output: Hello, Alice!","[{""title"": ""Re [4]: .net (vb)\u306e\u30bf\u30a4\u30d7\u521d\u671f\u5316\u5b50\u304c\u4f8b\u5916\u3092\u30b9\u30ed\u30fc\u3057\u305f\u6642\u306e\u5bfe\u51e6\u6cd5"", ""link"": ""http://bbs.wankuma.com/index.cgi?mode=al2&namber=82834&KLOG=141"", ""snippet"": ""Feb 10, 2017 \u00b7 C#, VB.NET, ASP.NET, C++/CLI, Java, VB6 \u306a\u3069\u306e\u30d7\u30ed\u30b0\u30e9\u30df\u30f3\u30b0\u306b\u95a2\u3059\u308b\u8cea\u554f\u3001\u307e\u305f\u306f Windows \u3084 SQL Server \u306a\u3069\u306e\u8cea\u554f\u3092\u6295\u7a3f\u3067\u304d\u307e\u3059\u3002""}, {""title"": ""Re [5]: MySQL\u3092\u4f7f\u3063\u3066\u65e5\u4ed8 (\u5e74\u6708)\u306e\u6bd4\u8f03\u3092\u3057\u305f\u3044\u3002"", ""link"": ""http://bbs.wankuma.com/index.cgi?mode=al2&namber=92579&KLOG=160"", ""snippet"": ""Oct 8, 2019 \u00b7 C#, VB.NET, ASP.NET, C++/CLI, Java, VB6 \u306a\u3069\u306e\u30d7\u30ed\u30b0\u30e9\u30df\u30f3\u30b0\u306b\u95a2\u3059\u308b\u8cea\u554f\u3001\u307e\u305f\u306f Windows \u3084 SQL Server \u306a\u3069\u306e\u8cea\u554f\u3092\u6295\u7a3f\u3067\u304d\u307e\u3059\u3002""}, {""title"": ""Re [1]: \uff62\u30bf\u30a4\u30d7\u521d\u671f\u5316\u5b50\u304c\u4f8b\u5916\u3092\u30b9\u30ed\u30fc\u3057\u307e\u3057\u305f\uff63\u304c\u767a\u751f"", ""link"": ""http://bbs.wankuma.com/index.cgi?mode=al2&namber=57391&KLOG=96"", ""snippet"": ""Feb 24, 2011 \u00b7 C#, VB.NET, ASP.NET, C++/CLI, Java, VB6 \u306a\u3069\u306e\u30d7\u30ed\u30b0\u30e9\u30df\u30f3\u30b0\u306b\u95a2\u3059\u308b\u8cea\u554f\u3001\u307e\u305f\u306f Windows \u3084 SQL Server \u306a\u3069\u306e\u8cea\u554f\u3092\u6295\u7a3f\u3067\u304d\u307e\u3059\u3002""}]"
+subtraction,"Subtraction is a fundamental arithmetic operation that represents the process of taking one quantity away from another. It is often denoted by the minus sign (−) and can be thought of as finding the difference between two numbers. For example, in the equation 7 - 3 = 4, the number 3 is subtracted from 7, resulting in 4. Subtraction is essential in various mathematical concepts and real-life applications, such as budgeting, measuring, and problem-solving. It also has properties, such as the fact that subtracting a number from itself results in zero.","# Subtracting two numbers
+a = 10
+b = 4
+result = a - b
+print(result)  # Output: 6","[{""title"": ""Milano, l'impianto non regge: la sconfitta storica dei pm. Ma i ..."", ""link"": ""https://www.ilgiornale.it/news/politica/milano-limpianto-non-regge-sconfitta-storica-dei-pm-i-2538242.html"", ""snippet"": ""7 hours ago \u00b7 \""Non \u00e8 una sconfitta, noi andiamo avanti\"". \u00c8 questo il messaggio che arriva dai corridoi della Procura della Repubblica di Milano, all'indomani della batosta subita sul fronte delle \u2026""}, {""title"": ""La guerra dei pm all'urbanistica e una sentenza che sar\u00e0 decisiva"", ""link"": ""https://www.ilfoglio.it/gran-milano/2024/05/23/news/la-guerra-dei-pm-all-urbanistica-e-una-sentenza-che-sara-decisiva-6570558/"", ""snippet"": ""May 23, 2024 \u00b7 Mentre il decreto \""Salva Milano\"" \u00e8 ancora in discussione, la citt\u00e0 cerca di risolvere il problema degli abusi edilizi partendo dal cantiere di via Lepontina: il progetto \""Il giardino \u2026""}, {""title"": ""Inchiesta Milano: \""San Siro, c'\u00e8 un patto corruttivo\"" secondo i pm ..."", ""link"": ""https://www.gazzetta.it/Calcio/Serie-A/Milan/20-07-2025/inchiesta-milano-san-siro-c-e-un-patto-corruttivo-secondo-i-pm.shtml"", ""snippet"": ""Jul 20, 2025 \u00b7 La chance gli si porge quando l'immobiliarista Massimo Caputi, estraneo alle indagini, affida alla J+S la trasformazione delle scuderie De Montel a San Siro in terme.""}]"
+java subtraction,"In Java, subtraction is performed using the minus operator (`-`). It can be applied to various numeric data types, including integers (`int`), floating-point numbers (`float` and `double`), and others. For example, to subtract two integers, you can write `int result = a - b;`, where `a` and `b` are the integers. The result will be the difference between the two values. Additionally, Java handles type conversion automatically when performing subtraction between different numeric types, promoting smaller types to larger types as needed.","public class SubtractionExample {
+    public static void main(String[] args) {
+        int a = 10;
+        int b = 5;
+        int result = a - b;
+        System.out.println(""Subtraction Result: "" + result);
+    }
+}
+#include <iostream>
+using namespace std;
+
+int main() {
+    int a = 10;
+    int b = 5;
+    int result = a - b;
+    cout << ""Subtraction Result: "" << result << endl;
+    return 0;
+}","[{""title"": ""Recuperar contrase\u00f1a de Facebook: con y sin correo o n\u00famero - CCM"", ""link"": ""https://es.ccm.net/aplicaciones-e-internet/redes-sociales-y-mensajeria/915-que-hacer-si-olvidaste-tu-contrasena-de-facebook/"", ""snippet"": ""Jul 19, 2023 \u00b7 \u00bfHas olvidado tu contrase\u00f1a de Facebook y no puedes entrar? En este art\u00edculo te explicamos c\u00f3mo recuperar tu cuenta si olvidaste tu contrase\u00f1a, incluso sin usar tu correo o tu \u2026""}, {""title"": ""C\u00f3mo 'hackear' una cuenta de Facebook: sin tel\u00e9fono, correo - CCM"", ""link"": ""https://es.ccm.net/aplicaciones-e-internet/redes-sociales-y-mensajeria/2172-como-hackear-una-cuenta-de-facebook/"", ""snippet"": ""Oct 25, 2023 \u00b7 En Internet puedes encontrar sitios que ofrecen tutoriales de c\u00f3mo hackear una cuenta de Facebook, ya sea mediante un keylogger o ingenier\u00eda social. Tambi\u00e9n, puedes \u2026""}, {""title"": ""Descargar Facebook gratis para PC, iOS, Android APK - CCM"", ""link"": ""https://es.ccm.net/descargas/comunicacion/5426-facebook/"", ""snippet"": ""Jan 23, 2024 \u00b7 Para recuperar una cuenta de Facebook, dir\u00edgete a la p\u00e1gina de inicio de Facebook y haz clic en \""\u00bfOlvidaste tu cuenta?\"" justo debajo del bot\u00f3n \""Iniciar sesi\u00f3n\"".""}]"

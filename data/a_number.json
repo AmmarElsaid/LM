@@ -1,0 +1,12 @@
+{
+  "topic": "a number",
+  "explanation": "A Number is a 2002 play by British playwright Caryl Churchill. The story, set in the near future, is structured around the conflict between a father (Salter) and his sons (Bernard 1, Bernard 2, and Michael Black) – two of whom are clones of the first one. The play addresses the subject of human cloning and identity, especially nature versus nurture. Many critics over the years have lauded A Number, arguing Churchill created a work of significant intellectual depth with effective economy of style.\n\n\n== Plot synopsis ==\nScene 1: Bernard 2 (\"B2\" in the script) has discovered that he is one of a number of clones.",
+  "code": "def is_prime(n):\n    if n <= 1:\n        return False\n    for i in range(2, int(n**0.5) + 1):\n        if n % i == 0:\n            return False\n    return True\n\n# Example usage\nnumber = 29\nprint(is_prime(number))  # Output: True",
+  "links": [
+    {
+      "title": "No links found",
+      "link": "",
+      "snippet": "Try refining query."
+    }
+  ]
+}

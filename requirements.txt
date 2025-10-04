@@ -1,0 +1,26 @@
+# Core dependencies
+streamlit
+python-dotenv
+pandas
+numpy
+requests
+
+# LangChain & AI
+langchain
+langchain-community
+langchain-core
+langchain-openai
+openai
+
+# Embeddings & NLP
+sentence-transformers
+faiss-cpu
+scikit-learn
+spacy
+
+# Data & Web
+wikipedia
+beautifulsoup4
+
+# Utilities
+tqdm

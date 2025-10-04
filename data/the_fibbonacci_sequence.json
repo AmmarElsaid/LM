@@ -1,0 +1,22 @@
+{
+  "topic": "the fibbonacci sequence",
+  "explanation": "The Fibonacci sequence is a series of numbers where each number is the sum of the two preceding ones, starting from 0 and 1. The sequence begins as 0, 1, 1, 2, 3, 5, 8, 13, and so on. It is named after the Italian mathematician Leonardo of Pisa, known as Fibonacci, who introduced it to the Western world in his 1202 book \"Liber Abaci.\" The Fibonacci sequence appears in various natural phenomena, such as the arrangement of leaves, the branching of trees, and the patterns of certain flowers. It also has applications in computer science, mathematics, and art.",
+  "code": "def fibonacci(n):\n    fib_sequence = []\n    a, b = 0, 1\n    for _ in range(n):\n        fib_sequence.append(a)\n        a, b = b, a + b\n    return fib_sequence\n\n# Example usage:\nprint(fibonacci(10))  # Output: [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]",
+  "links": [
+    {
+      "title": "A Python Guide to the Fibonacci Sequence",
+      "link": "https://realpython.com/fibonacci-sequence-python/",
+      "snippet": "In this step-by-step tutorial, you'll explore the Fibonacci sequence in Python, which serves as an invaluable springboard into the world of recursion, and learn how to optimize recursive …"
+    },
+    {
+      "title": "Print the Fibonacci sequence - Python - GeeksforGeeks",
+      "link": "https://www.geeksforgeeks.org/python/python-program-to-print-the-fibonacci-sequence/",
+      "snippet": "Jul 23, 2025 · The code uses an iterative approach to print the first 10 numbers of the Fibonacci sequence, starting from 0 and 1. It updates the values of a and b in each iteration and …"
+    },
+    {
+      "title": "Python Program to Print the Fibonacci sequence",
+      "link": "https://www.programiz.com/python-programming/examples/fibonacci-sequence",
+      "snippet": "Source code to print Fibonacci sequence in Python programming with output and explanation..."
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "topic": "the difference",
+  "explanation": "The term \"the difference\" generally refers to the distinction or variation between two or more items, concepts, or values. In mathematics, it specifically denotes the result of subtracting one number from another. In broader contexts, it can highlight contrasting characteristics, opinions, or outcomes. Understanding differences is crucial for analysis, decision-making, and problem-solving across various fields.",
+  "code": "def classify_substance(pH):\n    if pH < 7:\n        return \"Acid\"\n    elif pH > 7:\n        return \"Base\"\n    else:\n        return \"Neutral\"\n\n# Example usage:\nprint(classify_substance(3))  # Output: Acid\nprint(classify_substance(10)) # Output: Base\nprint(classify_substance(7))  # Output: Neutral",
+  "links": [
+    {
+      "title": "什么是双重差分模型（difference-in-differences model - 知乎",
+      "link": "https://www.zhihu.com/question/24322044",
+      "snippet": "3.2 三重差分法（Difference-in-differences-in-differences, DDD） 定义：再做一次双重差分消除实验与对照组差异带来的增量，剩下的即干预带来的增量。 三重差分的概念比较抽象，这里通过一个例 …"
+    },
+    {
+      "title": "difference和different的区别 - 百度知道",
+      "link": "https://zhidao.baidu.com/question/1111483969839728539.html",
+      "snippet": "区别一：意思不同 difference释义： 差异；不同；差额等。 different释义不同的；差异的等。 区别二：词性不同 difference是名词词性和动词词性。 例句：We have a big difference。意思是：我们有 …"
+    },
+    {
+      "title": "different,difference,differently的区别和用法是什么?_百度知道",
+      "link": "https://zhidao.baidu.com/question/580073177.html",
+      "snippet": "different用作形容词，difference用作名词、动词，differently用作副词，三者之间的区别是：意思不同、用法不同 一、意思不同 1、different的意思是：不同的；差异的；分别的；各不相同的 2 …"
+    }
+  ]
+}

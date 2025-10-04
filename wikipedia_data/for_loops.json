@@ -1,0 +1,5 @@
+{
+  "topic": "for loops",
+  "content": "In computer science, a for-loop or for loop is a control flow statement for specifying iteration. Specifically, a for-loop functions by running a section of code repeatedly until a certain condition has been satisfied.\n\nFor-loops have two parts: a header and a body. The header defines how the loop will iterate, and the body is the code executed once per iteration. The header often declares an explicit loop counter or loop variable.",
+  "source": "Wikipedia"
+}

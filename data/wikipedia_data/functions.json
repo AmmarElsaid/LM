@@ -1,0 +1,22 @@
+{
+  "topic": "functions",
+  "explanation": "In mathematics, a function is a relation that assigns each input exactly one output. It is often expressed as \\( f(x) \\), where \\( f \\) is the function name and \\( x \\) is the input variable. Functions can be represented in various forms, including equations, graphs, and tables. They are fundamental in various fields, as they describe how one quantity depends on another. Functions can be classified into different types, such as linear, quadratic, and exponential, based on their characteristics.",
+  "code": "def greet(name):\n    return f\"Hello, {name}!\"\n\n# Calling the function\nprint(greet(\"Alice\"))  # Output: Hello, Alice!",
+  "links": [
+    {
+      "title": "Re [4]: .net (vb)のタイプ初期化子が例外をスローした時の対処法",
+      "link": "http://bbs.wankuma.com/index.cgi?mode=al2&namber=82834&KLOG=141",
+      "snippet": "Feb 10, 2017 · C#, VB.NET, ASP.NET, C++/CLI, Java, VB6 などのプログラミングに関する質問、または Windows や SQL Server などの質問を投稿できます。"
+    },
+    {
+      "title": "Re [5]: MySQLを使って日付 (年月)の比較をしたい。",
+      "link": "http://bbs.wankuma.com/index.cgi?mode=al2&namber=92579&KLOG=160",
+      "snippet": "Oct 8, 2019 · C#, VB.NET, ASP.NET, C++/CLI, Java, VB6 などのプログラミングに関する質問、または Windows や SQL Server などの質問を投稿できます。"
+    },
+    {
+      "title": "Re [1]: ｢タイプ初期化子が例外をスローしました｣が発生",
+      "link": "http://bbs.wankuma.com/index.cgi?mode=al2&namber=57391&KLOG=96",
+      "snippet": "Feb 24, 2011 · C#, VB.NET, ASP.NET, C++/CLI, Java, VB6 などのプログラミングに関する質問、または Windows や SQL Server などの質問を投稿できます。"
+    }
+  ]
+}

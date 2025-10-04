@@ -1,0 +1,17 @@
+{
+  "topic": "recursion",
+  "explanation": "Recursion is a programming and mathematical concept where a function calls itself to solve a problem. It typically involves a base case, which stops the recursion, and a recursive case, which breaks the problem into smaller subproblems. This technique is often used for tasks like traversing data structures (e.g., trees), calculating factorials, or solving complex problems like the Fibonacci sequence. While powerful, recursion can lead to performance issues if not managed properly, such as excessive memory use or stack overflow errors.",
+  "code": "def factorial(n):\n    if n == 0:  # Base case\n        return 1\n    else:  # Recursive case\n        return n * factorial(n - 1)\n\n# Example usage\nprint(factorial(5))  # Output: 120",
+  "links": [
+    {
+      "title": "GeeksforGeeks - recursion",
+      "link": "https://www.geeksforgeeks.org/?s=recursion",
+      "snippet": "Tutorials and explanations"
+    },
+    {
+      "title": "StackOverflow - recursion",
+      "link": "https://stackoverflow.com/search?q=recursion",
+      "snippet": "Questions and answers"
+    }
+  ]
+}

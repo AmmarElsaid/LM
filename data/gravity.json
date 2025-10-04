@@ -1,0 +1,12 @@
+{
+  "topic": "gravity",
+  "explanation": "Gravity is a fundamental force of nature that attracts two bodies with mass toward each other. It is responsible for keeping planets in orbit around stars, moons around planets, and governs the motion of objects on Earth. Sir Isaac Newton formulated the law of universal gravitation, which quantifies this force, while Albert Einstein's theory of general relativity describes gravity as the curvature of spacetime caused by mass. Gravity affects everything from the falling of an apple to the Earth to the formation of galaxies in the universe.",
+  "code": "def gravitational_force(m1, m2, r):\n    G = 6.674 * 10**-11  # gravitational constant\n    return G * (m1 * m2) / r**2\n\n# Example usage\nmass1 = 5.972 * 10**24  # mass of Earth in kg\nmass2 = 7.348 * 10**22  # mass of Moon in kg\ndistance = 3.844 * 10**8  # distance from Earth to Moon in meters\n\nforce = gravitational_force(mass1, mass2, distance)\nprint(f\"The gravitational force between Earth and Moon is {force:.2e} N\")",
+  "links": [
+    {
+      "title": "No links found",
+      "link": "",
+      "snippet": "Try refining query."
+    }
+  ]
+}

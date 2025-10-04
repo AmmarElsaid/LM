@@ -1,0 +1,12 @@
+{
+  "topic": "loop",
+  "explanation": "A loop in programming is a control structure that allows for the repeated execution of a block of code as long as a specified condition is met. There are several types of loops, including \"for\" loops, which iterate a set number of times, and \"while\" loops, which continue until a condition becomes false. Loops are essential for tasks that require repetitive actions, such as processing items in a list or performing calculations multiple times. Properly managing loops is crucial to avoid infinite loops, which can cause programs to hang or crash.",
+  "code": "# Using a for loop to print each item in a list\nfruits = ['apple', 'banana', 'cherry']\nfor fruit in fruits:\n    print(fruit)\napple\nbanana\ncherry",
+  "links": [
+    {
+      "title": "No links found",
+      "link": "",
+      "snippet": "Try refining query."
+    }
+  ]
+}

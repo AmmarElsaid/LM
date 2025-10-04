@@ -1,0 +1,12 @@
+{
+  "topic": "a c++ code",
+  "explanation": "ATC code C Cardiovascular system is a section of the Anatomical Therapeutic Chemical Classification System, a system of alphanumeric codes developed by the World Health Organization (WHO) for the classification of drugs and other medical products.\nCodes for veterinary use (ATCvet codes) can be created by placing the letter Q in front of the human ATC code: for example, QC. National versions of the ATC classification may include additional codes not present in this list, which follows the WHO version.",
+  "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int a, b, sum;\n    cout << \"Enter two integers: \";\n    cin >> a >> b;\n    sum = a + b;\n    cout << \"Sum: \" << sum << endl;\n    return 0;\n}",
+  "links": [
+    {
+      "title": "No links found",
+      "link": "",
+      "snippet": "Try refining query."
+    }
+  ]
+}

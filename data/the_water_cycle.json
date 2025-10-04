@@ -1,0 +1,22 @@
+{
+  "topic": "the water cycle",
+  "explanation": "The water cycle (or hydrologic cycle or hydrological cycle) is a biogeochemical cycle that involves the continuous movement of water on, above and below the surface of the Earth across different reservoirs. The mass of water on Earth remains fairly constant over time. However, the partitioning of the water into the major reservoirs of ice, fresh water, salt water and atmospheric water is variable and depends on climatic variables. The water moves from one reservoir to another, such as from river to ocean, or from the ocean to the atmosphere due to a variety of physical and chemical processes. The processes that drive these movements, or fluxes, are evaporation, transpiration, condensation, precipitation, sublimation, infiltration, surface runoff, and subsurface flow.",
+  "code": "class WaterCycle:\n    def __init__(self):\n        self.stage = \"Collection\"\n\n    def evaporate(self):\n        self.stage = \"Evaporation\"\n        print(\"Water is evaporating.\")\n\n    def condense(self):\n        self.stage = \"Condensation\"\n        print(\"Water vapor is condensing into clouds.\")\n\n    def precipitate(self):\n        self.stage = \"Precipitation\"\n        print(\"Water is falling as rain.\")\n\n    def cycle(self):\n        self.evaporate()\n        self.condense()\n        self.precipitate()\n        self.stage = \"Collection\"\n        print(\"Water is collected back into bodies of water.\")\n\n# Example usage\nwater_cycle = WaterCycle()\nwater_cycle.cycle()",
+  "links": [
+    {
+      "title": "Rand Water",
+      "link": "https://www.randwater.co.za/",
+      "snippet": "Sep 10, 2025 · Important Notice Please take note that any contract and or agreement not signed by the Chief Executive of Rand Water will not be deemed as an official Rand Water …"
+    },
+    {
+      "title": "BULK POTABLE WATER TARIFF INCREASE EFFECTIVE …",
+      "link": "https://www.randwater.co.za/./media/forums/presentations/Rand+Water+Tariff+Consultation+for+the+Financial+Year+Beginning+1st+July+2025.pdf",
+      "snippet": "Process of Consultation Rand Water must, for at least 40 (forty) days, request SALGA and National Treasury to provide comments on the proposed tariff increase. Thereafter the …"
+    },
+    {
+      "title": "South African National Standard Drinking Water Quality ... - Rand …",
+      "link": "https://www.randwater.co.za/./media/forums/presentations/South+African+National+StandardDrinking+Water+Quality+SANS+241++2024).pdf",
+      "snippet": "Minimum requirements for safe drinking water supply to consumers. Includes: ‒ Water quality numerical limits (microbiological, chemical, radiological, operational & aesthetic parameters) ‒ …"
+    }
+  ]
+}

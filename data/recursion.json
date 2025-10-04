@@ -1,0 +1,22 @@
+{
+  "topic": "recursion",
+  "explanation": "Recursion is a programming and mathematical concept where a function calls itself to solve a problem. It typically involves a base case, which stops the recursion, and a recursive case, which breaks the problem into smaller subproblems. This technique is often used for tasks like calculating factorials, traversing data structures (like trees), and solving complex problems that can be defined in terms of simpler instances. While powerful, recursion can lead to performance issues if not managed properly, such as excessive memory use or stack overflow errors.",
+  "code": "def factorial(n):\n    if n == 0:  # Base case\n        return 1\n    else:       # Recursive case\n        return n * factorial(n - 1)\n\n# Example usage\nprint(factorial(5))  # Output: 120",
+  "links": [
+    {
+      "title": "What is recursion and when should I use it? - Stack Overflow",
+      "link": "https://stackoverflow.com/questions/3021/what-is-recursion-and-when-should-i-use-it",
+      "snippet": "There are a number of good explanations of recursion in this thread, this answer is about why you shouldn't use it in most languages.* In the majority of major imperative language implementations …"
+    },
+    {
+      "title": "recursion - Determining complexity for recursive functions (Big O ...",
+      "link": "https://stackoverflow.com/questions/13467674/determining-complexity-for-recursive-functions-big-o-notation",
+      "snippet": "Nov 20, 2012 · I have a Computer Science Midterm tomorrow and I need help determining the complexity of these recursive functions. I know how to solve simple cases, but I am still trying to …"
+    },
+    {
+      "title": "Recursion vs loops - Stack Overflow",
+      "link": "https://stackoverflow.com/questions/660337/recursion-vs-loops",
+      "snippet": "Mar 19, 2009 · Recursion is good for proto-typing a function and/or writing a base, but after you know the code works and you go back to it during the optimization phase, try to replace it with a …"
+    }
+  ]
+}
