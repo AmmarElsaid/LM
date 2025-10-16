@@ -14,5 +14,13 @@
     "method": "embedding_retrieval",
     "response_time_sec": 0.295,
     "fallback": false
+  },
+  {
+    "timestamp": "2025-10-16T22:08:19.295295",
+    "prompt": "Explain Data Structures in Python",
+    "subject": "Computer Science",
+    "method": "embedding_retrieval",
+    "response_time_sec": 0.953,
+    "fallback": false
   }
 ]
