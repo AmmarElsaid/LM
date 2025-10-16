@@ -23,7 +23,7 @@ except Exception:
 
 load_dotenv()
 
-# ------------------- File Paths -------------------
+#File Paths
 DATA_CSV = os.path.join(os.path.dirname(__file__), "data", "seed_lessons.csv")
 WIKI_JSON_DIR = os.path.join(os.path.dirname(__file__), "data", "wikipedia_data")
 os.makedirs(WIKI_JSON_DIR, exist_ok=True)
@@ -31,7 +31,7 @@ os.makedirs(WIKI_JSON_DIR, exist_ok=True)
 LESSONS_EMBED_PATH = os.path.join(os.path.dirname(__file__), "lessons_with_embeddings.json")
 embedder = EmbeddingManager(use_openai=False)
 
-# ------------------- Topic Planning -------------------
+#Topic Planning
 def planner_agent(user_prompt: str) -> Dict[str, Any]:
     subtasks = [
         {"type": "explain", "description": "Explain the topic simply."},
@@ -60,7 +60,7 @@ def infer_topic(prompt: str) -> str:
     tokens = re.findall(r"[a-zA-Z]+", p_low)
     return tokens[0] if tokens else "topic"
 
-# ------------------- Wikipedia Agent -------------------
+# Wikipedia Agent
 def wikipedia_agent(topic: str) -> Dict[str, str]:
     try:
         summary = wikipedia.summary(topic, sentences=5)
@@ -72,7 +72,7 @@ def wikipedia_agent(topic: str) -> Dict[str, str]:
     except Exception as e:
         return {"topic": topic, "content": "", "error": str(e)}
 
-# ------------------- OpenAI Tutor Agent -------------------
+
 def extract_code_and_explanation(content: str):
     explanation_lines, code_lines = [], []
     in_code_block = False
@@ -88,90 +88,136 @@ def extract_code_and_explanation(content: str):
     code = "\n".join(code_lines).replace('\\n', '\n').strip('"')
     return explanation, code
 
-def tutor_agent(topic: str, user_prompt: str, explain=True, code=True) -> Dict[str, Any]:
+#code generator agent
+def tutor_agent(topic: str, user_prompt: str) -> Dict[str, Any]:
+    """
+    Calls OpenAI to generate only a concise Python code example for a topic.
+    No explanation is returned.
+    """
     api_key = os.getenv("OPENAI_API_KEY", "").strip()
     if not api_key or OpenAI is None:
-        return {"explanation": "", "code": "# No code example generated.", "prompts_used": 0, "tutor_time": 0.0}
+        return {"code": "# No code example generated.", "prompts_used": 0, "elapsed_time": 0.0}
 
     try:
         client = OpenAI(api_key=api_key)
-        system_prompt = "You are a concise programming tutor."
-        if explain and not code:
-            system_prompt += " Explain the topic in 3-5 sentences, clearly and briefly."
-        elif code and not explain:
-            system_prompt += " Provide one concise Python example in a single fenced code block."
-        else:
-            system_prompt += " Explain briefly and provide one concise Python example."
+        # System prompt instructs to return only code
+        system_prompt = (
+            "You are a concise programming tutor. Provide only one concise Python example "
+            "in a single fenced code block. Do NOT include any explanations."
+        )
 
         messages = [
             {"role": "system", "content": system_prompt},
             {"role": "user", "content": f"User request: {user_prompt}\nFocus topic: {topic}"}
         ]
 
-        start = time.time()
+        start_time = time.time()
         resp = client.chat.completions.create(
             model="gpt-4o-mini",
             messages=messages,
             temperature=0.2
         )
-        elapsed = time.time() - start
-        content = resp.choices[0].message.content
-        explanation, code_text = extract_code_and_explanation(content)
+        elapsed = time.time() - start_time
+
+        content = resp.choices[0].message.content.strip()
+
+        _, code_text = extract_code_and_explanation(content)
 
         return {
-            "explanation": explanation if explain else "",
-            "code": code_text if code else "",
+            "code": code_text or "# No code example generated.",
             "prompts_used": 1,
-            "tutor_time": elapsed
+            "elapsed_time": elapsed
         }
 
     except Exception as e:
         print("OpenAI call failed:", e)
-        return {"explanation": "", "code": "# No code example generated.", "prompts_used": 0, "tutor_time": 0.0}
+        return {"code": "# No code example generated.", "prompts_used": 0, "elapsed_time": 0.0}
 
-# ------------------- Web Agent (Subject-Specific) -------------------
-def web_agent(topic: str, subject: str):
-    """Return curated links based on subject and topic."""
+def explainer_agent(topic: str, user_prompt: str) -> Dict[str, Any]:
+    """
+    Calls OpenAI to generate only an explanation of a topic, without any code.
+    """
+    api_key = os.getenv("OPENAI_API_KEY", "").strip()
+    if not api_key or OpenAI is None:
+        return {"explanation": "", "prompts_used": 0, "elapsed_time": 0.0}
+
+    try:
+        client = OpenAI(api_key=api_key)
+        system_prompt = (
+            "You are a concise tutor. Explain the topic clearly in 3-5 sentences. "
+            "Do NOT provide any code examples."
+        )
+
+        messages = [
+            {"role": "system", "content": system_prompt},
+            {"role": "user", "content": f"User request: {user_prompt}\nFocus topic: {topic}"}
+        ]
+
+        start_time = time.time()
+        response = client.chat.completions.create(
+            model="gpt-4o-mini",
+            messages=messages,
+            temperature=0.2
+        )
+        elapsed = time.time() - start_time
+
+        explanation = response.choices[0].message.content.strip()
+
+        return {
+            "explanation": explanation,
+            "prompts_used": 1,
+            "elapsed_time": elapsed
+        }
+
+    except Exception as e:
+        print("OpenAI call failed:", e)
+        return {"explanation": "", "prompts_used": 0, "elapsed_time": 0.0}
+
+# Web agent
+def web_agent(subject: str):
+    """Return curated links based only on subject, ignoring topic."""
     links = []
-    topic_query = topic.replace(" ", "+")
 
-    if subject == "Computer Science":
-        links = [
-            {"title": f"GeeksforGeeks - {topic}", "link": f"https://www.geeksforgeeks.org/?s={topic_query}", "snippet": "Tutorials and explanations"},
-            {"title": f"StackOverflow - {topic}", "link": f"https://stackoverflow.com/search?q={topic_query}", "snippet": "Questions and answers"},
+    preferred_sites = {
+        "Computer Science": [
+            ("GeeksforGeeks", "https://www.geeksforgeeks.org/", "Tutorials and explanations"),
+            ("StackOverflow", "https://stackoverflow.com/", "Questions and answers")
+        ],
+        "Mathematics": [
+            ("Khan Academy", "https://www.khanacademy.org/math", "Interactive lessons"),
+            ("Wolfram MathWorld", "https://mathworld.wolfram.com/", "Detailed explanations")
+        ],
+        "Biology": [
+            ("Khan Academy Biology", "https://www.khanacademy.org/science/biology", "Biology tutorials"),
+            ("Nature", "https://www.nature.com/subjects/biology", "Research articles")
+        ],
+        "Chemistry": [
+            ("Chemistry LibreTexts", "https://chem.libretexts.org/", "Chemistry tutorials"),
+            ("Khan Academy Chemistry", "https://www.khanacademy.org/science/chemistry", "Interactive lessons")
+        ],
+        "Physics": [
+            ("HyperPhysics", "http://hyperphysics.phy-astr.gsu.edu/", "Physics explanations"),
+            ("Khan Academy Physics", "https://www.khanacademy.org/science/physics", "Interactive lessons")
         ]
-    elif subject == "Mathematics":
-        links = [
-            {"title": f"Khan Academy - {topic}", "link": f"https://www.khanacademy.org/search?page_search_query={topic_query}", "snippet": "Interactive lessons"},
-            {"title": f"Wolfram MathWorld - {topic}", "link": f"https://mathworld.wolfram.com/search/?query={topic_query}", "snippet": "Detailed explanations"},
-        ]
-    elif subject == "Biology":
-        links = [
-            {"title": f"Khan Academy Biology - {topic}", "link": f"https://www.khanacademy.org/search?page_search_query={topic_query}", "snippet": "Biology tutorials"},
-            {"title": f"Nature - {topic}", "link": f"https://www.nature.com/search?q={topic_query}", "snippet": "Research articles"},
-        ]
-    elif subject == "Chemistry":
-        links = [
-            {"title": f"Chemistry LibreTexts - {topic}", "link": f"https://chem.libretexts.org/?search={topic_query}", "snippet": "Chemistry tutorials"},
-            {"title": f"Khan Academy Chemistry - {topic}", "link": f"https://www.khanacademy.org/search?page_search_query={topic_query}", "snippet": "Interactive lessons"},
-        ]
-    elif subject == "Physics":
-        links = [
-            {"title": f"HyperPhysics - {topic}", "link": f"http://hyperphysics.phy-astr.gsu.edu/hbase/{topic_query}.html", "snippet": "Physics explanations"},
-            {"title": f"Khan Academy Physics - {topic}", "link": f"https://www.khanacademy.org/search?page_search_query={topic_query}", "snippet": "Interactive lessons"},
-        ]
-    else:
-        links = [{"title": "No resources found", "link": "", "snippet": ""}]
+    }
+
+    for site, link, snippet in preferred_sites.get(subject, []):
+        links.append({"title": site, "link": link, "snippet": snippet})
+
+    # fallback if no subject matched
+    if not links:
+        links = [{"title": "See explanation above", "link": "", "snippet": "Resources included in explanation"}]
+
     return links
 
-# ------------------- Validator -------------------
+# Validator
 def validator_agent(payload: Dict[str, Any]) -> Dict[str, Any]:
     payload["explanation"] = payload.get("explanation","").strip() or "No explanation generated."
     payload["code"] = payload.get("code","").strip() or "# No code example generated."
     payload["links"] = payload.get("links",[]) or [{"title":"No links found","link":"","snippet":"Try refining query."}]
     return payload
 
-# ------------------- Load / Save Lessons -------------------
+# Load and save lessons
 def save_lesson(topic: str, explanation: str, code: str, links: list):
     """Save lesson CSV, JSON, and update embeddings automatically."""
     # CSV
@@ -254,7 +300,7 @@ def retrieve_lesson_from_embeddings(query: str, threshold: float = 0.75):
             best_lesson = lesson
     return best_lesson if best_score >= threshold else None
 
-# ------------------- Run Pipeline -------------------
+# flaaback run pipeline-
 
 def run_pipeline(user_prompt: str, subject: str = None) -> dict:
     """

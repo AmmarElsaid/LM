@@ -1,0 +1,18 @@
+[
+  {
+    "timestamp": "2025-10-16T21:16:19.163032",
+    "prompt": "Explain Data Structures in Python",
+    "subject": "Computer Science",
+    "method": "langchain",
+    "response_time_sec": 15.227,
+    "fallback": false
+  },
+  {
+    "timestamp": "2025-10-16T21:58:55.947272",
+    "prompt": "Explain Data Structures in Python",
+    "subject": "Computer Science",
+    "method": "embedding_retrieval",
+    "response_time_sec": 0.295,
+    "fallback": false
+  }
+]

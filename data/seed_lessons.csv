@@ -43,18 +43,18 @@ def add_integers(a, b):
 # Example usage
 result = add_integers(5, 3)
 print(result)  # Output: 8","[{""title"": ""Welcome to Python.org"", ""link"": ""https://www.python.org/"", ""snippet"": ""Experienced programmers in any other language can pick up Python very quickly, and beginners find the clean syntax and indentation structure easy to learn. Whet your appetite with our Python \u2026""}, {""title"": ""Online Python - IDE, Editor, Compiler, Interpreter"", ""link"": ""https://www.online-python.com/"", ""snippet"": ""Python, which was initially developed by Guido van Rossum and made available to the public in 1991, is currently one of the most widely used general-purpose programming languages.""}, {""title"": ""Python Tutorial - W3Schools"", ""link"": ""https://www.w3schools.com/python/"", ""snippet"": ""Learn Python Python is a popular programming language. Python can be used on a server to create web applications. Start learning Python now \u00bb""}]"
-a c++ code,"ATC code C Cardiovascular system is a section of the Anatomical Therapeutic Chemical Classification System, a system of alphanumeric codes developed by the World Health Organization (WHO) for the classification of drugs and other medical products.
-Codes for veterinary use (ATCvet codes) can be created by placing the letter Q in front of the human ATC code: for example, QC. National versions of the ATC classification may include additional codes not present in this list, which follows the WHO version.","#include <iostream>
+a c++ code,"C.C. (シー・ツー, Shī Tsū, pronounced C2) is the pseudonym of a fictional character in the Code Geass: Lelouch of the Rebellion franchise by Sunrise. With her real name kept from the audience, she first appeared in the 2006 initial anime season, and afterwards has appeared in many manga, OVA, anime, and video game spinoff. She is voiced by Yukana.
+Introduced as a captive human test subject of the villainous  Holy Britannia Empire, C. C. is revealed to be an immortal young woman with special powers called the Geass. Sardonic, stubborn, and mysterious, she can give Geass powers to others, which she does to main protagonist Lelouch Lamperouge.","#include <iostream>
 using namespace std;
 
 int main() {
-    int a, b, sum;
-    cout << ""Enter two integers: "";
-    cin >> a >> b;
-    sum = a + b;
+    int a, b, c;
+    cout << ""Enter three integers: "";
+    cin >> a >> b >> c;
+    int sum = a + b + c;
     cout << ""Sum: "" << sum << endl;
     return 0;
-}","[{""title"": ""No links found"", ""link"": """", ""snippet"": ""Try refining query.""}]"
+}","[{""title"": ""GeeksforGeeks - a c++ code"", ""link"": ""https://www.geeksforgeeks.org/?s=a+c+++code"", ""snippet"": ""Tutorials and explanations""}, {""title"": ""StackOverflow - a c++ code"", ""link"": ""https://stackoverflow.com/search?q=a+c+++code"", ""snippet"": ""Questions and answers""}]"
 how many seasons,"PCD is the debut studio album by American girl group the Pussycat Dolls, released on September 12, 2005, by A&M Records.   In 1995, the Pussycat Dolls were created as a burlesque troupe by choreographer Robin Antin. After attracting media attention, Antin struck a joint venture with Interscope Records to develop the Pussycat Dolls into a brand, with Jimmy Iovine assigning the project to Ron Fair. As one of the executive producers Fair produced the majority of the album and collaborated with producers like Kwamé, Polow da Don and Rich Harrison. The music style of PCD was described as pop/R&B and urban dance-pop.","seasons = [""Spring"", ""Summer"", ""Autumn"", ""Winter""]
 print(f""There are {len(seasons)} seasons in a year: {', '.join(seasons)}."")","[{""title"": ""google mail"", ""link"": ""https://mail.google.com/mail?hl=es"", ""snippet"": ""Aqu\u00ed nos gustar\u00eda mostrarte una descripci\u00f3n, pero el sitio web que est\u00e1s mirando no lo permite.""}, {""title"": ""Gmail: el correo electr\u00f3nico de Google"", ""link"": ""https://www.gmail.com/mail/help/intl/es/about.html?iframe"", ""snippet"": ""La sencillez y facilidad de Gmail en todo tipo de dispositivos. Organiza tu vida con la bandeja de entrada de Gmail, que clasifica tus mensajes \u2026""}, {""title"": ""Gmail: espacio de almacenamiento y correo gratuitos de Google"", ""link"": ""https://www.google.es/gmail/about/for-work/"", ""snippet"": ""Gmail funciona en todos los dispositivos Android, iOS y ordenadores. Ordena tus mensajes, colabora o llama a un amigo sin salir de tu \u2026""}]"
 gravity,"Gravity is a fundamental force of nature that attracts two bodies with mass toward each other. It is responsible for keeping planets in orbit around stars, moons around planets, and governs the motion of objects on Earth. Sir Isaac Newton formulated the law of universal gravitation, which quantifies this force, while Albert Einstein's theory of general relativity describes gravity as the curvature of spacetime caused by mass. Gravity affects everything from the falling of an apple to the Earth to the formation of galaxies in the universe.","def gravitational_force(m1, m2, r):
@@ -123,10 +123,10 @@ fruits.remove('banana')
 # Iterating through the list
 for fruit in fruits:
     print(fruit)","[{""title"": ""No links found"", ""link"": """", ""snippet"": ""Try refining query.""}]"
-recursion,"Recursion is a programming and mathematical concept where a function calls itself to solve a problem. It typically involves a base case, which stops the recursion, and a recursive case, which breaks the problem into smaller subproblems. This technique is often used for tasks like traversing data structures (e.g., trees), calculating factorials, or solving complex problems like the Fibonacci sequence. While powerful, recursion can lead to performance issues if not managed properly, such as excessive memory use or stack overflow errors.","def factorial(n):
-    if n == 0:  # Base case
+recursion,"Recursion is a programming and mathematical concept where a function calls itself to solve a problem. It typically involves a base case, which stops the recursion, and a recursive case, which breaks the problem into smaller subproblems. This technique is often used for tasks like calculating factorials, traversing data structures (like trees), and solving complex problems through divide-and-conquer strategies. While powerful, recursion can lead to high memory usage and stack overflow if not managed properly.","def factorial(n):
+    if n == 0:
         return 1
-    else:  # Recursive case
+    else:
         return n * factorial(n - 1)
 
 # Example usage
@@ -160,3 +160,45 @@ water_cycle.cycle()","[{""title"": ""Rand Water"", ""link"": ""https://www.randw
 the derivative,"In mathematics, the derivative is a fundamental tool that quantifies the sensitivity to change of a function's output with respect to its input. The derivative of a function of a single variable at a chosen input value, when it exists, is the slope of the tangent line to the graph of the function at that point. The tangent line is the best linear approximation of the function near that input value. For this reason, the derivative is often described as the instantaneous rate of change, the ratio of the instantaneous change in the dependent variable to that of the independent variable. The process of finding a derivative is called differentiation.",# No code example generated.,"[{""title"": ""Khan Academy - the derivative"", ""link"": ""https://www.khanacademy.org/search?page_search_query=the+derivative"", ""snippet"": ""Interactive lessons""}, {""title"": ""Wolfram MathWorld - the derivative"", ""link"": ""https://mathworld.wolfram.com/search/?query=the+derivative"", ""snippet"": ""Detailed explanations""}]"
 cos,"Cost is the value of money that has been used up to produce something or deliver a service, and hence is not available for use anymore. In business, the cost may be one of acquisition, in which case the amount of money expended to acquire it is counted as cost. In this case, money is the input that is gone in order to acquire the thing. This acquisition cost may be the sum of the cost of production as incurred by the original producer, and further costs of transaction as incurred by the acquirer over and above the price paid to the producer. Usually, the price also includes a mark-up for profit over the cost of production.",# No code example generated.,"[{""title"": ""Khan Academy - cos"", ""link"": ""https://www.khanacademy.org/search?page_search_query=cos"", ""snippet"": ""Interactive lessons""}, {""title"": ""Wolfram MathWorld - cos"", ""link"": ""https://mathworld.wolfram.com/search/?query=cos"", ""snippet"": ""Detailed explanations""}]"
 cosx,"The function \( \cos(x) \) is one of the fundamental trigonometric functions, representing the cosine of an angle \( x \) measured in radians. It describes the ratio of the adjacent side to the hypotenuse in a right triangle. The cosine function is periodic, with a period of \( 2\pi \), and its values range from -1 to 1. The graph of \( \cos(x) \) is a wave-like curve that oscillates between these values, starting at 1 when \( x = 0 \). Cosine is widely used in various fields, including physics, engineering, and computer science, particularly in modeling oscillatory phenomena.",# No code example generated.,"[{""title"": ""Khan Academy - cosx"", ""link"": ""https://www.khanacademy.org/search?page_search_query=cosx"", ""snippet"": ""Interactive lessons""}, {""title"": ""Wolfram MathWorld - cosx"", ""link"": ""https://mathworld.wolfram.com/search/?query=cosx"", ""snippet"": ""Detailed explanations""}]"
+the largest human bone,"The femur (; pl.: femurs or femora ), or thigh bone is the only bone in the thigh — the region of the lower limb between the hip and the knee. In many four-legged animals, the femur is the upper bone of the hindleg.
+The top of the femur fits into a socket in the pelvis called the hip joint, and the bottom of the femur connects to the shinbone (tibia) and kneecap (patella) to form the knee. In humans the femur is the  largest and thickest bone in the body.
+
+
+== Structure ==
+The femur is the only bone in the upper leg and the longest bone in the human body.",# No code example generated.,"[{""title"": ""Khan Academy Biology - the largest human bone"", ""link"": ""https://www.khanacademy.org/search?page_search_query=the+largest+human+bone"", ""snippet"": ""Biology tutorials""}, {""title"": ""Nature - the largest human bone"", ""link"": ""https://www.nature.com/search?q=the+largest+human+bone"", ""snippet"": ""Research articles""}]"
+the functions,"In mathematics, hyperbolic functions are analogues of the ordinary trigonometric functions, but defined using the hyperbola rather than the circle. Just as the points (cos t, sin t) form a circle with a unit radius, the points (cosh t, sinh t) form the right half of the unit hyperbola. Also, similarly to how the derivatives of sin(t) and cos(t) are cos(t) and –sin(t) respectively, the derivatives of sinh(t) and cosh(t) are cosh(t) and sinh(t) respectively.
+Hyperbolic functions are used to express the angle of parallelism in hyperbolic geometry. They are used to express Lorentz boosts as hyperbolic rotations in special relativity.",# No code example generated.,"[{""title"": ""Khan Academy Biology - the functions"", ""link"": ""https://www.khanacademy.org/search?page_search_query=the+functions"", ""snippet"": ""Biology tutorials""}, {""title"": ""Nature - the functions"", ""link"": ""https://www.nature.com/search?q=the+functions"", ""snippet"": ""Research articles""}]"
+pi,"P, or p, is the sixteenth letter of the Latin alphabet, used in the modern English alphabet, the alphabets of other western European languages and others worldwide. Its name in English is pee (pronounced  ), plural pees.
+
+
+== History ==
+The Semitic Pê (mouth), as well as the Greek Π or π (Pi), and the Etruscan and Latin letters that developed from the former alphabet all symbolized /p/, a voiceless bilabial plosive.
+
+
+== Use in writing systems ==
+
+
+=== English ===
+In English orthography, ⟨p⟩ represents the sound /p/.
+A common digraph in English is ⟨ph⟩, which represents the sound , and can be used to transliterate ⟨φ⟩ phi in loanwords from Greek.",# No code example generated.,"[{""title"": ""Khan Academy - pi"", ""link"": ""https://www.khanacademy.org/search?page_search_query=pi"", ""snippet"": ""Interactive lessons""}, {""title"": ""Wolfram MathWorld - pi"", ""link"": ""https://mathworld.wolfram.com/search/?query=pi"", ""snippet"": ""Detailed explanations""}]"
+neutralization,"Neutralization is a chemical reaction between an acid and a base that results in the formation of water and a salt. This process typically occurs when an acid donates protons (H⁺ ions) to a base, which accepts them, effectively reducing the acidity or basicity of the solution. The general equation for a neutralization reaction can be represented as: Acid + Base → Salt + Water. Neutralization is commonly used in various applications, including titrations in chemistry, treating acid spills, and in biological systems to maintain pH balance.",# No code example generated.,"[{""title"": ""GeeksforGeeks - neutralization"", ""link"": ""https://www.geeksforgeeks.org/?s=neutralization"", ""snippet"": ""Tutorials and explanations""}, {""title"": ""StackOverflow - neutralization"", ""link"": ""https://stackoverflow.com/search?q=neutralization"", ""snippet"": ""Questions and answers""}]"
+classes,"In programming, a class is a blueprint for creating objects that encapsulate data and behavior. It defines attributes (data) and methods (functions) that operate on the data. Classes are fundamental to object-oriented programming (OOP), allowing for code reusability and organization through concepts like inheritance and polymorphism. By creating instances of a class, developers can model real-world entities and their interactions in a structured way.","#include <iostream>
+using namespace std;
+
+class Car {
+public:
+    string brand;
+    int year;
+
+    void displayInfo() {
+        cout << ""Brand: "" << brand << "", Year: "" << year << endl;
+    }
+};
+
+int main() {
+    Car myCar;
+    myCar.brand = ""Toyota"";
+    myCar.year = 2020;
+    myCar.displayInfo();
+    return 0;
+}","[{""title"": ""GeeksforGeeks - classes"", ""link"": ""https://www.geeksforgeeks.org/?s=classes"", ""snippet"": ""Tutorials and explanations""}, {""title"": ""StackOverflow - classes"", ""link"": ""https://stackoverflow.com/search?q=classes"", ""snippet"": ""Questions and answers""}]"

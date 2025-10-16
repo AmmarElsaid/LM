@@ -3,44 +3,62 @@ import numpy as np
 import json
 from embedding_manager import EmbeddingManager
 
+EMBEDDING_DIM = 384  
+
 # Load lessons
-with open("lessons_with_embeddings.json", "r") as f:
+with open("lessons_with_embeddings.json", "r", encoding="utf-8") as f:
     lessons = json.load(f)
 
-# Create embedder (same as used for generating embeddings)
-embedder = EmbeddingManager(use_openai=False)
+embedder = EmbeddingManager(use_openai=False, embedding_dim=EMBEDDING_DIM)
 
-def find_best_match(query, lessons, embedder):
-    # Get embedding (could be list of floats) and convert to 1D NumPy array
-    query_vec = np.array(embedder.embed_text(query), dtype=np.float32)
-    if query_vec.ndim > 1:
-        query_vec = query_vec.flatten()  # make sure it’s 1D
-    query_vec = query_vec.reshape(1, -1)  # reshape for cosine_similarity
+def find_best_match(query, lessons, embedder, embedding_dim=EMBEDDING_DIM):
+    """
+    Finds the most similar lesson to the query using cosine similarity.
+    Skips lessons with empty or mismatched embeddings.
+    Returns structured lesson with explanation, code (CS only), links.
+    """
+    query_vec = np.array(embedder.embed_text(query), dtype=np.float32).reshape(1, -1)
 
     best_score = -1
     best_lesson = None
 
     for lesson in lessons:
-        lesson_vec = np.array(lesson["embedding"], dtype=np.float32)
-        if lesson_vec.ndim > 1:
-            lesson_vec = lesson_vec.flatten()
-        lesson_vec = lesson_vec.reshape(1, -1)
+        lesson_embedding = lesson.get("embedding", [])
+        if len(lesson_embedding) != embedding_dim:
+            continue  # skip invalid embeddings
 
+        lesson_vec = np.array(lesson_embedding, dtype=np.float32).reshape(1, -1)
         score = cosine_similarity(query_vec, lesson_vec)[0][0]
 
         if score > best_score:
             best_score = score
             best_lesson = lesson
 
-    return best_lesson, best_score
+    # Format structured lesson
+    if best_lesson:
+        # Ensure keys exist
+        explanation = best_lesson.get("explanation", "No explanation available.")
+        code = best_lesson.get("code", "") if best_lesson.get("subject") == "Computer Science" else ""
+        links = best_lesson.get("links", [])
+        if not links:
+            links = [{"title": "See explanation above", "link": "", "snippet": "Resources included in explanation"}]
 
+        return {
+            "topic": best_lesson.get("topic", "unknown"),
+            "explanation": explanation,
+            "code": code,
+            "links": links
+        }, best_score
 
-# Test queries
-queries = ["What is gravity", "Basics of acids"]
+    return None, 0.0
 
-for q in queries:
-    lesson, score = find_best_match(q, lessons, embedder)  # <- pass embedder here!
-    if lesson:
-        print(f"Query: {q}\nBest match: {lesson['explanation']}\nScore: {score}\n")
-    else:
-        print(f"Query: {q}\nNo good match found. Score: {score}\n")
+# ---------------- Test ----------------
+if __name__ == "__main__":
+    queries = ["Explain gravity", "Basics of acids", "Python arithmetic operators"]
+
+    for q in queries:
+        lesson, score = find_best_match(q, lessons, embedder)
+        if lesson:
+            print(f"\nQuery: {q}\nTopic: {lesson['topic']}\nExplanation: {lesson['explanation']}\nCode: {lesson['code']}\nLinks: {lesson['links']}\nScore: {score:.3f}")
+        else:
+            print(f"\nQuery: {q}\nNo good match found. Score: {score:.3f}")

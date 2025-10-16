@@ -1,0 +1,17 @@
+{
+  "topic": "a c++ code",
+  "explanation": "C.C. (シー・ツー, Shī Tsū, pronounced C2) is the pseudonym of a fictional character in the Code Geass: Lelouch of the Rebellion franchise by Sunrise. With her real name kept from the audience, she first appeared in the 2006 initial anime season, and afterwards has appeared in many manga, OVA, anime, and video game spinoff. She is voiced by Yukana.\nIntroduced as a captive human test subject of the villainous  Holy Britannia Empire, C. C. is revealed to be an immortal young woman with special powers called the Geass. Sardonic, stubborn, and mysterious, she can give Geass powers to others, which she does to main protagonist Lelouch Lamperouge.",
+  "code": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int a, b, c;\n    cout << \"Enter three integers: \";\n    cin >> a >> b >> c;\n    int sum = a + b + c;\n    cout << \"Sum: \" << sum << endl;\n    return 0;\n}",
+  "links": [
+    {
+      "title": "GeeksforGeeks - a c++ code",
+      "link": "https://www.geeksforgeeks.org/?s=a+c+++code",
+      "snippet": "Tutorials and explanations"
+    },
+    {
+      "title": "StackOverflow - a c++ code",
+      "link": "https://stackoverflow.com/search?q=a+c+++code",
+      "snippet": "Questions and answers"
+    }
+  ]
+}

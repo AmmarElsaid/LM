@@ -1,0 +1,17 @@
+{
+  "topic": "classes",
+  "explanation": "In programming, a class is a blueprint for creating objects that encapsulate data and behavior. It defines attributes (data) and methods (functions) that operate on the data. Classes are fundamental to object-oriented programming (OOP), allowing for code reusability and organization through concepts like inheritance and polymorphism. By creating instances of a class, developers can model real-world entities and their interactions in a structured way.",
+  "code": "#include <iostream>\nusing namespace std;\n\nclass Car {\npublic:\n    string brand;\n    int year;\n\n    void displayInfo() {\n        cout << \"Brand: \" << brand << \", Year: \" << year << endl;\n    }\n};\n\nint main() {\n    Car myCar;\n    myCar.brand = \"Toyota\";\n    myCar.year = 2020;\n    myCar.displayInfo();\n    return 0;\n}",
+  "links": [
+    {
+      "title": "GeeksforGeeks - classes",
+      "link": "https://www.geeksforgeeks.org/?s=classes",
+      "snippet": "Tutorials and explanations"
+    },
+    {
+      "title": "StackOverflow - classes",
+      "link": "https://stackoverflow.com/search?q=classes",
+      "snippet": "Questions and answers"
+    }
+  ]
+}

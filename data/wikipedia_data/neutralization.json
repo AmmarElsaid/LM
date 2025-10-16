@@ -1,0 +1,17 @@
+{
+  "topic": "neutralization",
+  "explanation": "Neutralization is a chemical reaction between an acid and a base that results in the formation of water and a salt. This process typically occurs when an acid donates protons (H⁺ ions) to a base, which accepts them, effectively reducing the acidity or basicity of the solution. The general equation for a neutralization reaction can be represented as: Acid + Base → Salt + Water. Neutralization is commonly used in various applications, including titrations in chemistry, treating acid spills, and in biological systems to maintain pH balance.",
+  "code": "# No code example generated.",
+  "links": [
+    {
+      "title": "GeeksforGeeks - neutralization",
+      "link": "https://www.geeksforgeeks.org/?s=neutralization",
+      "snippet": "Tutorials and explanations"
+    },
+    {
+      "title": "StackOverflow - neutralization",
+      "link": "https://stackoverflow.com/search?q=neutralization",
+      "snippet": "Questions and answers"
+    }
+  ]
+}

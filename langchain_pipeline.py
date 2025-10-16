@@ -1,72 +1,89 @@
 # langchain_pipeline.py
-from langchain_agent import learnmate_agent
+import os
+import json
 import time
+import numpy as np
+from embedding_manager import EmbeddingManager
+from langchain_agent import learnmate_agent
+from agents import web_agent, run_pipeline as fallback_pipeline
 
-def extract_topic_from_response(langchain_result):
-    """Extract topic from LangChain response"""
-    output = langchain_result.get("output", "")
-    if output:
-        lines = output.split('\n')
-        for line in lines:
-            line = line.strip()
-            if line and len(line) > 10:
-                topic = line.split('.')[0]
-                topic = topic.replace('**', '').replace('#', '').strip()
-                if topic and len(topic) > 5:
-                    return topic
-    return "unknown"
+LESSONS_FILE = "lessons_with_embeddings.json"
+SIMILARITY_THRESHOLD = 0.65
 
-def extract_code_from_response(langchain_result):
-    """Extract code from LangChain response"""
-    output = langchain_result.get("output", "")
-    if "```python" in output:
-        code_start = output.find("```python") + 9
-        code_end = output.find("```", code_start)
-        if code_end > code_start:
-            return output[code_start:code_end].strip()
-    return ""
+class Pipeline:
+    def __init__(self):
+        # Load lessons
+        if os.path.exists(LESSONS_FILE):
+            with open(LESSONS_FILE, "r", encoding="utf-8") as f:
+                self.lessons_with_embeddings = json.load(f)
+        else:
+            self.lessons_with_embeddings = []
 
-def format_langchain_output(langchain_result, subject):
-    """Convert LangChain output to lesson format"""
-    output = langchain_result.get("output", "")
-    topic = extract_topic_from_response(langchain_result)
-    code = extract_code_from_response(langchain_result) if subject == "Computer Science" else ""
-    
-    return {
-        "topic": topic,
-        "explanation": output,
-        "code": code or "# No code example generated.",
-        "links": [{"title": "See explanation above", "link": "", "snippet": "Resources included in explanation"}]
-    }
+        self.embedder = EmbeddingManager(use_openai=False)
 
-def run_pipeline_langchain(user_prompt: str, subject: str = None) -> dict:
-    """LangChain-based pipeline"""
-    if learnmate_agent is None:
-        # Fallback to original pipeline or return error
-        from agents import run_pipeline as original_pipeline
-        print("⚠️ Using original pipeline (LangChain agent not available)")
-        return original_pipeline(user_prompt, subject)
-    
-    try:
+    # ---------------- Helper Methods ----------------
+    def cosine_similarity_vec(self, vec1, vec2):
+        vec1, vec2 = np.array(vec1), np.array(vec2)
+        if np.linalg.norm(vec1) == 0 or np.linalg.norm(vec2) == 0:
+            return 0.0
+        return np.dot(vec1, vec2) / (np.linalg.norm(vec1) * np.linalg.norm(vec2))
+
+    def find_similar_lesson(self, prompt_embedding):
+        best_lesson = None
+        best_score = 0.0
+        for lesson in self.lessons_with_embeddings:
+            existing_embedding = lesson.get("embedding", [])
+            if not existing_embedding or all(v == 0 for v in existing_embedding):
+                continue
+            score = self.cosine_similarity_vec(prompt_embedding, existing_embedding)
+            #print(f"Comparing to lesson: {lesson.get('explanation','')[:30]}... score={score:.3f}")
+            if score > best_score:
+                best_score = score
+                best_lesson = lesson
+        if best_score >= SIMILARITY_THRESHOLD:
+            return best_lesson
+        return None
+
+    def save_lessons(self):
+        with open(LESSONS_FILE, "w", encoding="utf-8") as f:
+            json.dump(self.lessons_with_embeddings, f, indent=2)
+
+    # ---------------- Main Run Method ----------------
+    def run(self, user_prompt: str, subject: str = "General") -> dict:
         start_time = time.time()
-        result = learnmate_agent.invoke({
-            "input": f"User request: {user_prompt}. Subject: {subject}",
-            "subject": subject
-        })
-        
-        return {
-            "meta": {
-                "completed": True,
-                "prompts_used": 1,
-                "agent_failures": 0,
-                "total_time_sec": time.time() - start_time,
-                "method": "langchain"
-            },
-            "lesson": format_langchain_output(result, subject)
-        }
-        
-    except Exception as e:
-        # Fallback to original pipeline on error
-        from agents import run_pipeline as original_pipeline
-        print(f"⚠️ LangChain failed, using original pipeline: {e}")
-        return original_pipeline(user_prompt, subject)
+        try:
+            prompt_embedding = self.embedder.embed_text(user_prompt)
+            existing_lesson = self.find_similar_lesson(prompt_embedding)
+            if existing_lesson:
+                return {
+                    "meta": {"completed": True, "method": "embedding_retrieval", "time_sec": time.time() - start_time, "fallback": False},
+                    "lesson": existing_lesson
+                }
+
+            if learnmate_agent is None:
+                # fallback to old pipeline
+                return fallback_pipeline(user_prompt, subject)
+
+            # LangChain agent call
+            result = learnmate_agent.invoke({"input": user_prompt, "subject": subject})
+
+            # Decide which formatter based on subject
+            from formatters import get_formatter
+            formatter = get_formatter(subject)
+            new_lesson = formatter.format(result)
+
+            self.lessons_with_embeddings.append(new_lesson)
+            self.save_lessons()
+
+            return {
+                "meta": {"completed": True, "method": "langchain", "time_sec": time.time() - start_time},
+                "lesson": new_lesson
+            }
+
+        except Exception as e:
+            print(f"Pipeline failed: {e}")
+            return fallback_pipeline(user_prompt, subject)
+
+
+# ------------------- Module-level instance -------------------
+pipeline = Pipeline()
